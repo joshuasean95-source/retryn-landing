@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   />
-  <title>Retryn — Track Returns, Warranties, Refunds, and Packages</title>
+  <title>Retryn — Track Returns, Packages, Refunds, and Warranties</title>
   <meta
     name="description"
     content="Retryn helps you track packages, return windows, refunds, and warranties in one calm dashboard. Stop losing money to missed deadlines."
@@ -56,34 +56,32 @@
 
     :root {
       --bg: #090b10;
-      --bg-soft: #12141b;
-      --bg-panel: #171a23;
-      --bg-panel-2: #1b2030;
+      --bg-soft: #11141b;
+      --bg-card: #171b24;
+      --bg-card-2: #1c2130;
       --stroke: rgba(255, 255, 255, 0.08);
-      --stroke-strong: rgba(255, 255, 255, 0.13);
+      --stroke-strong: rgba(255, 255, 255, 0.14);
       --text: #f7f7f8;
-      --text-soft: #b1b4c2;
-      --text-dim: #7b8092;
+      --text-soft: #b7bcc9;
+      --text-dim: #7c8293;
 
       --mint: #83cfaa;
-      --mint-deep: #6ab991;
-      --blue: #82a9d4;
-      --blue-deep: #5f7fa9;
+      --mint-deep: #67b78e;
+      --blue: #81a9d4;
+      --blue-deep: #6282ac;
       --gold: #f0c24f;
       --red: #ef746d;
-      --purple: #8d5df6;
+      --purple: #8e62f6;
 
-      --hero-glow-1: rgba(131, 207, 170, 0.16);
-      --hero-glow-2: rgba(130, 169, 212, 0.14);
-
-      --radius-xl: 32px;
+      --radius-xl: 34px;
       --radius-lg: 24px;
       --radius-md: 18px;
       --radius-sm: 14px;
 
-      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.35);
       --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.28);
-      --max: 1180px;
+
+      --max-width: 1180px;
     }
 
     html {
@@ -93,11 +91,11 @@
     body {
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 15% 10%, rgba(131, 207, 170, 0.08), transparent 30%),
-        radial-gradient(circle at 85% 0%, rgba(130, 169, 212, 0.08), transparent 30%),
+        radial-gradient(circle at 12% 0%, rgba(131, 207, 170, 0.08), transparent 26%),
+        radial-gradient(circle at 88% 0%, rgba(129, 169, 212, 0.08), transparent 24%),
         linear-gradient(180deg, #0a0c11 0%, #090b10 100%);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
       overflow-x: hidden;
     }
 
@@ -112,7 +110,7 @@
     }
 
     .container {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -123,7 +121,7 @@
       padding: 8px 14px;
       border-radius: 999px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--mint);
@@ -139,6 +137,14 @@
       box-shadow: 0 0 0 6px rgba(131, 207, 170, 0.08);
     }
 
+    .gradient-text {
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
     .section {
       padding: 96px 0;
       position: relative;
@@ -151,24 +157,41 @@
     }
 
     .section-header h2 {
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.06;
-      letter-spacing: -0.04em;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
       margin: 16px 0 14px;
     }
 
     .section-header p {
       font-size: 18px;
+      line-height: 1.72;
       color: var(--text-soft);
-      line-height: 1.7;
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.24s;
     }
 
     nav {
@@ -199,13 +222,14 @@
       height: 42px;
       border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
     }
 
     .brand span {
       font-size: 20px;
       font-weight: 900;
       letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     .nav-links {
@@ -235,19 +259,21 @@
       border-radius: 999px;
       font-size: 14px;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
       color: #0d1117;
-      box-shadow: 0 12px 28px rgba(131, 207, 170, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      box-shadow: 0 14px 30px rgba(131, 207, 170, 0.16);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .nav-cta:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 34px rgba(131, 207, 170, 0.2);
+      box-shadow: 0 18px 36px rgba(131, 207, 170, 0.2);
     }
 
     .hero {
-      padding: 70px 0 70px;
+      padding: 72px 0 76px;
       position: relative;
       overflow: hidden;
     }
@@ -257,14 +283,14 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, var(--hero-glow-1), transparent 28%),
-        radial-gradient(circle at 80% 10%, var(--hero-glow-2), transparent 26%);
+        radial-gradient(circle at 18% 16%, rgba(131, 207, 170, 0.16), transparent 28%),
+        radial-gradient(circle at 82% 0%, rgba(129, 169, 212, 0.14), transparent 24%);
       pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.03fr 0.97fr;
       gap: 48px;
       align-items: center;
       position: relative;
@@ -276,17 +302,17 @@
     }
 
     .hero-copy h1 {
-      font-size: clamp(44px, 6vw, 72px);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
+      font-size: clamp(46px, 6vw, 74px);
+      line-height: 0.97;
+      letter-spacing: -0.055em;
       margin: 22px 0 20px;
     }
 
     .hero-copy p {
-      font-size: 20px;
-      line-height: 1.7;
-      color: var(--text-soft);
       max-width: 560px;
+      font-size: 20px;
+      line-height: 1.72;
+      color: var(--text-soft);
     }
 
     .hero-actions {
@@ -306,14 +332,17 @@
       border-radius: 18px;
       font-size: 16px;
       font-weight: 800;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .btn-primary {
       gap: 12px;
-      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
       color: #0c1117;
-      box-shadow: 0 18px 40px rgba(130, 169, 212, 0.18);
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      box-shadow: 0 18px 40px rgba(129, 169, 212, 0.18);
     }
 
     .btn-primary img {
@@ -323,22 +352,22 @@
       object-fit: cover;
     }
 
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--stroke);
+    }
+
     .btn-primary:hover,
     .btn-secondary:hover {
       transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      color: var(--text);
-      border: 1px solid var(--stroke);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
     .hero-proof {
-      margin-top: 22px;
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
+      margin-top: 22px;
       color: var(--text-dim);
       font-size: 14px;
       font-weight: 600;
@@ -366,7 +395,7 @@
       border-radius: var(--radius-xl);
       border: 1px solid rgba(255, 255, 255, 0.08);
       background:
-        linear-gradient(135deg, rgba(20, 28, 47, 0.9), rgba(31, 34, 42, 0.92));
+        linear-gradient(135deg, rgba(20, 27, 44, 0.92), rgba(29, 33, 42, 0.94));
       box-shadow: var(--shadow-card);
       overflow: hidden;
     }
@@ -386,21 +415,21 @@
     .hero-card-main {
       top: 10px;
       left: 0;
+      min-height: 286px;
       padding: 28px;
-      min-height: 280px;
     }
 
     .hero-card-main h3 {
       font-size: 18px;
-      color: var(--text-soft);
       font-weight: 600;
+      color: var(--text-soft);
       margin-bottom: 12px;
     }
 
     .hero-card-main .value {
       font-size: 74px;
       line-height: 0.95;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
       font-weight: 900;
       margin-bottom: 10px;
     }
@@ -424,9 +453,9 @@
     }
 
     .metric .icon {
+      display: block;
       font-size: 18px;
       margin-bottom: 8px;
-      display: block;
     }
 
     .metric strong {
@@ -435,6 +464,7 @@
       line-height: 1;
       letter-spacing: -0.04em;
       margin-bottom: 6px;
+      color: var(--text);
     }
 
     .metric span {
@@ -446,10 +476,10 @@
       top: 320px;
       left: 22px;
       width: calc(100% - 44px);
-      padding: 24px 28px;
       min-height: 170px;
+      padding: 24px 28px;
       background:
-        linear-gradient(135deg, rgba(49, 14, 16, 0.95), rgba(35, 8, 12, 0.92));
+        linear-gradient(135deg, rgba(48, 14, 17, 0.95), rgba(34, 9, 13, 0.92));
       border: 1px solid rgba(239, 116, 109, 0.22);
     }
 
@@ -465,11 +495,12 @@
       font-size: 18px;
       font-weight: 800;
       margin-bottom: 4px;
+      color: var(--text);
     }
 
     .risk-copy p {
       font-size: 15px;
-      color: #c89a97;
+      color: #ca9a97;
     }
 
     .risk-value {
@@ -488,7 +519,7 @@
 
     .risk-value span {
       font-size: 14px;
-      color: #c89a97;
+      color: #ca9a97;
     }
 
     .risk-bar {
@@ -511,8 +542,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      color: #c89a97;
       font-size: 15px;
+      color: #ca9a97;
       font-weight: 600;
     }
 
@@ -524,8 +555,8 @@
     .hero-card-cats {
       top: 520px;
       right: 0;
-      padding: 26px 28px;
       min-height: 220px;
+      padding: 26px 28px;
     }
 
     .cats-top {
@@ -539,6 +570,7 @@
     .cats-top h4 {
       font-size: 18px;
       font-weight: 800;
+      color: var(--text);
     }
 
     .cats-top strong {
@@ -656,7 +688,7 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--stroke);
       background:
-        linear-gradient(135deg, rgba(22, 25, 34, 0.92), rgba(15, 17, 25, 0.88));
+        linear-gradient(135deg, rgba(22, 25, 34, 0.92), rgba(15, 18, 25, 0.88));
       padding: 26px;
       box-shadow: var(--shadow-card);
     }
@@ -672,7 +704,7 @@
     }
 
     .tone-blue {
-      background: rgba(130, 169, 212, 0.13);
+      background: rgba(129, 169, 212, 0.13);
       color: var(--blue);
     }
 
@@ -692,15 +724,16 @@
     }
 
     .tone-purple {
-      background: rgba(141, 93, 246, 0.14);
+      background: rgba(142, 98, 246, 0.14);
       color: var(--purple);
     }
 
     .feature-card h3 {
       font-size: 22px;
-      line-height: 1.15;
+      line-height: 1.14;
       letter-spacing: -0.03em;
       margin-bottom: 10px;
+      color: var(--text);
     }
 
     .feature-card p {
@@ -729,6 +762,7 @@
       font-size: 26px;
       letter-spacing: -0.03em;
       margin-bottom: 10px;
+      color: var(--text);
     }
 
     .panel p {
@@ -771,6 +805,7 @@
       line-height: 1.15;
       letter-spacing: -0.03em;
       margin-bottom: 4px;
+      color: var(--text);
     }
 
     .mini-copy span {
@@ -808,7 +843,6 @@
     }
 
     .step-card {
-      position: relative;
       border-radius: var(--radius-lg);
       border: 1px solid var(--stroke);
       background:
@@ -824,7 +858,11 @@
       display: grid;
       place-items: center;
       margin-bottom: 18px;
-      background: linear-gradient(135deg, rgba(131, 207, 170, 0.18), rgba(130, 169, 212, 0.18));
+      background: linear-gradient(
+        135deg,
+        rgba(131, 207, 170, 0.18),
+        rgba(129, 169, 212, 0.18)
+      );
       border: 1px solid rgba(131, 207, 170, 0.18);
       font-size: 22px;
       font-weight: 900;
@@ -836,6 +874,7 @@
       line-height: 1.12;
       letter-spacing: -0.03em;
       margin-bottom: 10px;
+      color: var(--text);
     }
 
     .step-card p {
@@ -844,10 +883,100 @@
       line-height: 1.7;
     }
 
+    .compare-wrap {
+      margin-top: 24px;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table thead th {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 800;
+      text-align: left;
+      padding: 22px 24px;
+    }
+
+    .compare-table tbody td {
+      padding: 22px 24px;
+      border-top: 1px solid var(--stroke);
+      font-size: 15px;
+      color: var(--text-soft);
+      vertical-align: middle;
+      line-height: 1.58;
+    }
+
+    .compare-table tbody td:first-child {
+      width: 24%;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .compare-table tbody td:nth-child(2) {
+      width: 51%;
+    }
+
+    .compare-table tbody td:last-child {
+      width: 25%;
+    }
+
+    .pro-cell {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .lock-note {
+      color: var(--text-soft);
+    }
+
+    .inline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      margin-left: 8px;
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .inline-badge.pro {
+      background: rgba(131, 207, 170, 0.12);
+      color: var(--mint);
+      border: 1px solid rgba(131, 207, 170, 0.18);
+    }
+
+    .inline-badge.locked {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-soft);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .compare-footnote {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-dim);
+      text-align: left;
+    }
+
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       align-items: start;
     }
 
@@ -877,23 +1006,35 @@
       background: linear-gradient(90deg, var(--mint) 0%, var(--blue) 100%);
     }
 
-    .price-top {
-      margin-bottom: 18px;
+    .price-popular {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: linear-gradient(90deg, var(--mint-deep) 0%, var(--blue) 100%);
+      margin-bottom: 16px;
     }
 
-    .price-label {
+    .price-name {
       font-size: 16px;
-      color: var(--text-soft);
       font-weight: 700;
+      color: var(--text-soft);
       margin-bottom: 10px;
     }
 
     .price-amount {
-      font-size: 52px;
+      font-size: 48px;
       line-height: 0.96;
       letter-spacing: -0.05em;
       font-weight: 900;
       margin-bottom: 8px;
+      color: var(--text);
     }
 
     .price-amount span {
@@ -904,46 +1045,36 @@
       margin-left: 4px;
     }
 
-    .price-sub {
+    .price-period {
       color: var(--text-dim);
       font-size: 15px;
       line-height: 1.6;
+      margin-bottom: 14px;
     }
 
-    .pill {
+    .price-save {
       display: inline-flex;
       align-items: center;
       min-height: 30px;
-      padding: 0 12px;
+      padding: 0 10px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      color: var(--mint);
+      background: rgba(131, 207, 170, 0.12);
+      border: 1px solid rgba(131, 207, 170, 0.2);
       margin-bottom: 18px;
     }
 
-    .pill-green {
-      background: rgba(131, 207, 170, 0.12);
-      color: var(--mint);
-      border: 1px solid rgba(131, 207, 170, 0.18);
-    }
-
-    .pill-purple {
-      background: rgba(141, 93, 246, 0.12);
-      color: #b89cff;
-      border: 1px solid rgba(141, 93, 246, 0.18);
-    }
-
-    .price-list {
+    .price-features {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin: 22px 0 26px;
+      margin: 18px 0 26px;
     }
 
-    .price-list li {
+    .price-features li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
@@ -952,13 +1083,19 @@
       line-height: 1.6;
     }
 
-    .price-list .check {
+    .price-features .check {
       color: var(--mint);
       font-weight: 900;
       flex-shrink: 0;
     }
 
-    .price-button {
+    .price-features .x {
+      color: var(--text-dim);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .btn-price {
       width: 100%;
       min-height: 54px;
       border-radius: 18px;
@@ -969,20 +1106,22 @@
       font-size: 16px;
       font-weight: 800;
       border: 1px solid var(--stroke);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
-    .price-button:hover {
+    .btn-price:hover {
       transform: translateY(-2px);
     }
 
-    .price-button.primary {
+    .btn-price.primary {
       border: none;
       color: #0c1117;
       background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
     }
 
-    .price-button.secondary {
+    .btn-price.secondary {
       color: var(--text);
       background: rgba(255, 255, 255, 0.03);
     }
@@ -1011,7 +1150,7 @@
       color: var(--text);
       font: inherit;
       text-align: left;
-      padding: 22px 22px;
+      padding: 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1039,11 +1178,13 @@
     .faq-body {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.28s ease, padding 0.28s ease;
+      transition:
+        max-height 0.28s ease,
+        padding 0.28s ease;
+      padding: 0 22px;
       color: var(--text-soft);
       font-size: 15px;
-      line-height: 1.7;
-      padding: 0 22px;
+      line-height: 1.72;
     }
 
     .faq-item.open .faq-body {
@@ -1056,7 +1197,7 @@
       border: 1px solid rgba(131, 207, 170, 0.18);
       background:
         radial-gradient(circle at 20% 20%, rgba(131, 207, 170, 0.12), transparent 25%),
-        radial-gradient(circle at 80% 0%, rgba(130, 169, 212, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(129, 169, 212, 0.12), transparent 25%),
         linear-gradient(135deg, rgba(18, 23, 32, 0.96), rgba(10, 12, 18, 0.96));
       padding: 54px 28px;
       text-align: center;
@@ -1068,6 +1209,7 @@
       line-height: 1.02;
       letter-spacing: -0.05em;
       margin-bottom: 14px;
+      color: var(--text);
     }
 
     .cta-panel p {
@@ -1075,7 +1217,7 @@
       margin: 0 auto 28px;
       color: var(--text-soft);
       font-size: 18px;
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .cta-actions {
@@ -1123,31 +1265,6 @@
       font-weight: 600;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .delay-1 {
-      transition-delay: 0.08s;
-    }
-
-    .delay-2 {
-      transition-delay: 0.16s;
-    }
-
-    .delay-3 {
-      transition-delay: 0.24s;
-    }
-
     @media (max-width: 1100px) {
       .hero-grid,
       .tracking-board {
@@ -1157,12 +1274,15 @@
       .hero-stack {
         min-height: 860px;
       }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 980px) {
       .info-grid,
-      .steps,
-      .pricing-grid {
+      .steps {
         grid-template-columns: 1fr;
       }
 
@@ -1175,9 +1295,21 @@
       }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       .nav-links {
         display: none;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-wrap {
+        overflow-x: auto;
+      }
+
+      .compare-table {
+        min-width: 760px;
       }
     }
 
@@ -1190,8 +1322,8 @@
         padding: 48px 0 56px;
       }
 
-      .hero-copy p,
       .section-header p,
+      .hero-copy p,
       .cta-panel p {
         font-size: 17px;
       }
@@ -1224,7 +1356,7 @@
 
     @media (max-width: 620px) {
       .container {
-        width: min(var(--max), calc(100% - 28px));
+        width: min(var(--max-width), calc(100% - 28px));
       }
 
       .nav-wrap {
@@ -1328,10 +1460,7 @@
       }
 
       .btn-primary,
-      .btn-secondary {
-        width: 100%;
-      }
-
+      .btn-secondary,
       .cta-actions .btn-primary,
       .cta-actions .btn-secondary {
         width: 100%;
@@ -1356,7 +1485,8 @@
 
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
-        <li><a href="#tracking">Preview</a></li>
+        <li><a href="#preview">Preview</a></li>
+        <li><a href="#compare">Free vs Pro</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -1413,7 +1543,7 @@
         <div class="hero-proof">
           <span><b>Packages</b> in transit</span>
           <span><b>Returns</b> due soon</span>
-          <span><b>Refunds</b> in progress</span>
+          <span><b>Refunds</b> pending</span>
           <span><b>Vault</b> ready when needed</span>
         </div>
       </div>
@@ -1426,25 +1556,45 @@
 
           <div class="main-metrics">
             <div class="metric">
-              <span class="icon" style="color: var(--blue);">📦</span>
+              <span
+                class="icon"
+                style="color: var(--blue);"
+              >
+                📦
+              </span>
               <strong>2</strong>
               <span>In Transit</span>
             </div>
 
             <div class="metric">
-              <span class="icon" style="color: var(--gold);">🕘</span>
+              <span
+                class="icon"
+                style="color: var(--gold);"
+              >
+                🕘
+              </span>
               <strong>2</strong>
               <span>Due Soon</span>
             </div>
 
             <div class="metric">
-              <span class="icon" style="color: var(--red);">💲</span>
+              <span
+                class="icon"
+                style="color: var(--red);"
+              >
+                💲
+              </span>
               <strong>2</strong>
               <span>Refunds</span>
             </div>
 
             <div class="metric">
-              <span class="icon" style="color: var(--mint);">🛡</span>
+              <span
+                class="icon"
+                style="color: var(--mint);"
+              >
+                🛡
+              </span>
               <strong>1</strong>
               <span>Warranties</span>
             </div>
@@ -1470,7 +1620,7 @@
 
           <div class="risk-bottom">
             <span>Act before deadlines pass</span>
-            <a href="#pricing">Return now →</a>
+            <a href="#pricing">Upgrade now →</a>
           </div>
         </div>
 
@@ -1481,7 +1631,10 @@
           </div>
 
           <div class="cats-body">
-            <div class="donut" aria-hidden="true"></div>
+            <div
+              class="donut"
+              aria-hidden="true"
+            ></div>
 
             <div class="cat-list">
               <div class="cat-item">
@@ -1538,7 +1691,7 @@
         </h2>
 
         <p>
-          The app screens use soft contrast, deep charcoal surfaces, mint and blue highlights, and sharp priority colors. This page now follows the same visual system.
+          Track what shipped, what needs action, what is still refundable, and what stays protected, all in one place.
         </p>
       </div>
 
@@ -1579,7 +1732,7 @@
           <div class="feature-badge tone-purple">🔐</div>
           <h3>Store proof in a vault</h3>
           <p>
-            Keep receipts, claim records, and warranty details in one place, ready to share in seconds.
+            Keep receipts, claim records, and warranty details in one secure place, ready to share in seconds.
           </p>
         </article>
 
@@ -1596,7 +1749,7 @@
 
   <section
     class="section"
-    id="tracking"
+    id="preview"
   >
     <div class="container">
       <div class="section-header reveal">
@@ -1606,11 +1759,11 @@
         </span>
 
         <h2>
-          Built around the same dashboard language shown inside <span class="gradient-text">your app screens.</span>
+          Built around the same dashboard language shown inside <span class="gradient-text">the app.</span>
         </h2>
 
         <p>
-          Strong hierarchy. Softer panels. Clear priority states. Better spacing. Better contrast. Better flow.
+          Deep charcoal surfaces, mint and blue highlights, priority reds and golds, and cleaner spacing throughout.
         </p>
       </div>
 
@@ -1737,6 +1890,88 @@
 
   <section
     class="section"
+    id="compare"
+  >
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Free vs Pro
+        </span>
+
+        <h2>
+          See what unlocks with <span class="gradient-text">Retryn Pro.</span>
+        </h2>
+
+        <p>
+          Free is a strong starting point. Pro unlocks unlimited tracking, vault tools, widgets, and premium claim workflows.
+        </p>
+      </div>
+
+      <div class="compare-wrap reveal delay-1">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Pro</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Orders</td>
+              <td>
+                Max 3 orders
+                <span class="lock-note">(warning at 1 remaining, blocked at limit)</span>
+              </td>
+              <td class="pro-cell">Unlimited</td>
+            </tr>
+
+            <tr>
+              <td>Vault tab</td>
+              <td>
+                Locked, opens upgrade screen
+                <span class="inline-badge locked">Locked</span>
+              </td>
+              <td class="pro-cell">Full access</td>
+            </tr>
+
+            <tr>
+              <td>Receipt Scanner</td>
+              <td>
+                Locked with lock icon
+                <span class="inline-badge pro">Pro</span>
+              </td>
+              <td class="pro-cell">Full access</td>
+            </tr>
+
+            <tr>
+              <td>Claim PDF Export</td>
+              <td>
+                Locked with Pro badge
+                <span class="inline-badge pro">Pro</span>
+              </td>
+              <td class="pro-cell">Full access</td>
+            </tr>
+
+            <tr>
+              <td>Widgets</td>
+              <td>No data syncs, widgets will not display</td>
+              <td class="pro-cell">Full widget support</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="compare-footnote reveal delay-2">
+        Pro is built for users who want unlimited tracking, deadline reminders, secure storage, export tools, and widget support in one place.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="section"
     id="pricing"
   >
     <div class="container">
@@ -1747,92 +1982,117 @@
         </span>
 
         <h2>
-          Pick the plan that fits your shopping habits.
+          Start free, then upgrade when you want full protection.
         </h2>
 
         <p>
-          Start free. Upgrade when you want unlimited tracking, vault storage, refund monitoring, and home screen widgets.
+          Choose the plan that fits how often you shop, track, return, and protect your purchases.
         </p>
       </div>
 
       <div class="pricing-grid">
-        <article class="price-card reveal delay-1">
-          <div class="price-top">
-            <div class="price-label">Free</div>
-            <div class="price-amount">$0<span>/mo</span></div>
-            <div class="price-sub">A clean start for occasional orders and basic return tracking.</div>
-          </div>
+        <div class="price-card reveal">
+          <div class="price-name">Free</div>
+          <div class="price-amount">$0<span>/free</span></div>
+          <div class="price-period">Start free and track the basics</div>
 
-          <ul class="price-list">
-            <li><span class="check">✓</span><span>Basic order tracking</span></li>
-            <li><span class="check">✓</span><span>Return reminders</span></li>
-            <li><span class="check">✓</span><span>Simple dashboard access</span></li>
-            <li><span class="check">✓</span><span>Starter vault storage</span></li>
+          <ul class="price-features">
+            <li><span class="check">✓</span><span>Track up to 3 orders</span></li>
+            <li><span class="check">✓</span><span>Basic return tracking</span></li>
+            <li><span class="check">✓</span><span>See deadlines at a glance</span></li>
+            <li><span class="x">×</span><span>Vault tab locked</span></li>
+            <li><span class="x">×</span><span>Receipt scanner locked</span></li>
+            <li><span class="x">×</span><span>Claim PDF export locked</span></li>
+            <li><span class="x">×</span><span>No widget sync support</span></li>
           </ul>
 
           <a
             href="https://apps.apple.com/app/retryn"
-            class="price-button secondary"
+            class="btn-price secondary"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Start Free
+            Download Free
           </a>
-        </article>
+        </div>
 
-        <article class="price-card featured reveal delay-2">
-          <span class="pill pill-green">Best Value</span>
+        <div class="price-card reveal delay-1">
+          <div class="price-name">Monthly Pro</div>
+          <div class="price-amount">$4.99<span>/mo</span></div>
+          <div class="price-period">Flexible monthly billing</div>
 
-          <div class="price-top">
-            <div class="price-label">Yearly</div>
-            <div class="price-amount">$29.99<span>/yr</span></div>
-            <div class="price-sub">Save versus monthly and keep everything active all year.</div>
-          </div>
-
-          <ul class="price-list">
+          <ul class="price-features">
             <li><span class="check">✓</span><span>Unlimited order tracking</span></li>
             <li><span class="check">✓</span><span>Return deadline reminders</span></li>
             <li><span class="check">✓</span><span>Receipt and warranty vault</span></li>
+            <li><span class="check">✓</span><span>Receipt scanner access</span></li>
+            <li><span class="check">✓</span><span>Claim PDF export</span></li>
             <li><span class="check">✓</span><span>Refund status monitoring</span></li>
-            <li><span class="check">✓</span><span>One-tap claim export</span></li>
-            <li><span class="check">✓</span><span>Home screen widgets</span></li>
+            <li><span class="check">✓</span><span>Widget support</span></li>
           </ul>
 
           <a
             href="https://apps.apple.com/app/retryn"
-            class="price-button primary"
+            class="btn-price secondary"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get Retryn Pro
+            Choose Monthly
           </a>
-        </article>
+        </div>
 
-        <article class="price-card reveal delay-3">
-          <span class="pill pill-purple">One Time</span>
+        <div class="price-card featured reveal delay-2">
+          <div class="price-popular">Most Popular</div>
+          <div class="price-name">Yearly Pro</div>
+          <div class="price-amount">$29.99<span>/yr</span></div>
+          <div class="price-period">Best value for active shoppers</div>
+          <div class="price-save">Save about 40% vs monthly</div>
 
-          <div class="price-top">
-            <div class="price-label">Lifetime</div>
-            <div class="price-amount">$69.99</div>
-            <div class="price-sub">Pay once and keep pro access tied to your account.</div>
-          </div>
-
-          <ul class="price-list">
-            <li><span class="check">✓</span><span>Everything in Pro</span></li>
-            <li><span class="check">✓</span><span>Long-term value for heavy shoppers</span></li>
-            <li><span class="check">✓</span><span>No renewal cycle</span></li>
-            <li><span class="check">✓</span><span>Own it once, keep it</span></li>
+          <ul class="price-features">
+            <li><span class="check">✓</span><span>Unlimited order tracking</span></li>
+            <li><span class="check">✓</span><span>Return deadline reminders</span></li>
+            <li><span class="check">✓</span><span>Receipt and warranty vault</span></li>
+            <li><span class="check">✓</span><span>Receipt scanner access</span></li>
+            <li><span class="check">✓</span><span>Claim PDF export</span></li>
+            <li><span class="check">✓</span><span>Refund status monitoring</span></li>
+            <li><span class="check">✓</span><span>Widget support</span></li>
           </ul>
 
           <a
             href="https://apps.apple.com/app/retryn"
-            class="price-button secondary"
+            class="btn-price primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Choose Yearly
+          </a>
+        </div>
+
+        <div class="price-card reveal delay-3">
+          <div class="price-name">Lifetime Pro</div>
+          <div class="price-amount">$69.99</div>
+          <div class="price-period">Pay once, keep Pro for life</div>
+          <div class="price-save">One-time purchase</div>
+
+          <ul class="price-features">
+            <li><span class="check">✓</span><span>Unlimited order tracking</span></li>
+            <li><span class="check">✓</span><span>Return deadline reminders</span></li>
+            <li><span class="check">✓</span><span>Receipt and warranty vault</span></li>
+            <li><span class="check">✓</span><span>Receipt scanner access</span></li>
+            <li><span class="check">✓</span><span>Claim PDF export</span></li>
+            <li><span class="check">✓</span><span>Refund status monitoring</span></li>
+            <li><span class="check">✓</span><span>Widget support</span></li>
+          </ul>
+
+          <a
+            href="https://apps.apple.com/app/retryn"
+            class="btn-price secondary"
             target="_blank"
             rel="noopener noreferrer"
           >
             Choose Lifetime
           </a>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1880,7 +2140,7 @@
             <span class="faq-icon">⌄</span>
           </button>
           <div class="faq-body">
-            No. The app flow shown in your screenshots focuses on adding orders directly, which keeps setup cleaner and faster.
+            No. Retryn is designed to help you add and manage purchases directly, so setup stays simple and fast.
           </div>
         </div>
 
@@ -1889,11 +2149,11 @@
             class="faq-btn"
             type="button"
           >
-            <span>Why does this page look closer to the app now?</span>
+            <span>Why are some features locked on free?</span>
             <span class="faq-icon">⌄</span>
           </button>
           <div class="faq-body">
-            The layout now uses the same dark surfaces, mint and blue action colors, softer card gradients, priority reds and golds, and stronger spacing rhythm shown in the app.
+            Free is meant to help users try the core workflow. Pro unlocks unlimited tracking, the vault, premium scanning, export tools, and widget support.
           </div>
         </div>
 
@@ -1906,7 +2166,7 @@
             <span class="faq-icon">⌄</span>
           </button>
           <div class="faq-body">
-            Yes. Paste this full file into your HTML page as one replacement. Add no extra space blocks before or after it.
+            Yes. This file is ready to paste as a full replacement for your current home or index HTML page.
           </div>
         </div>
       </div>
@@ -1961,7 +2221,8 @@
 
       <div class="footer-links">
         <a href="#features">Features</a>
-        <a href="#tracking">Preview</a>
+        <a href="#preview">Preview</a>
+        <a href="#compare">Free vs Pro</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="/privacy.html">Privacy</a>
@@ -1995,13 +2256,13 @@
     document.querySelectorAll(".faq-btn").forEach((button) => {
       button.addEventListener("click", () => {
         const item = button.parentElement;
-        const open = item.classList.contains("open");
+        const isOpen = item.classList.contains("open");
 
         document.querySelectorAll(".faq-item").forEach((faq) => {
           faq.classList.remove("open");
         });
 
-        if (!open) {
+        if (!isOpen) {
           item.classList.add("open");
         }
       });
