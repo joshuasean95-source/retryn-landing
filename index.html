@@ -1,581 +1,2011 @@
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Retryn — Track Returns, Warranties, Refunds, and Packages</title>
+  <meta
+    name="description"
+    content="Retryn helps you track packages, return windows, refunds, and warranties in one calm dashboard. Stop losing money to missed deadlines."
+  />
+  <meta
+    property="og:title"
+    content="Retryn — Never Miss a Return or Warranty Deadline Again"
+  />
+  <meta
+    property="og:description"
+    content="Track packages, returns, refunds, and warranties in one calm dashboard."
+  />
+  <meta
+    property="og:image"
+    content="https://retryn.app/og-image.png"
+  />
+  <meta
+    property="og:url"
+    content="https://retryn.app"
+  />
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
-    <a
-      href="https://apps.apple.com/app/retryn"
-      class="btn-nav"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Download Free
-    </a>
-  </div>
-</div>
-</nav> <section class="hero"> <div class="hero-glow"></div>
-<div class="container">
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="fade-up">
-        <span class="badge">
-          <span class="dot"></span>
-          Now on iOS
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #090b10;
+      --bg-soft: #12141b;
+      --bg-panel: #171a23;
+      --bg-panel-2: #1b2030;
+      --stroke: rgba(255, 255, 255, 0.08);
+      --stroke-strong: rgba(255, 255, 255, 0.13);
+      --text: #f7f7f8;
+      --text-soft: #b1b4c2;
+      --text-dim: #7b8092;
+
+      --mint: #83cfaa;
+      --mint-deep: #6ab991;
+      --blue: #82a9d4;
+      --blue-deep: #5f7fa9;
+      --gold: #f0c24f;
+      --red: #ef746d;
+      --purple: #8d5df6;
+
+      --hero-glow-1: rgba(131, 207, 170, 0.16);
+      --hero-glow-2: rgba(130, 169, 212, 0.14);
+
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+
+      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --max: 1180px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(131, 207, 170, 0.08), transparent 30%),
+        radial-gradient(circle at 85% 0%, rgba(130, 169, 212, 0.08), transparent 30%),
+        linear-gradient(180deg, #0a0c11 0%, #090b10 100%);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mint);
+      background: rgba(131, 207, 170, 0.1);
+      border: 1px solid rgba(131, 207, 170, 0.16);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 6px rgba(131, 207, 170, 0.08);
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      margin: 16px 0 14px;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(9, 11, 16, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-wrap {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .brand span {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-soft);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      color: #0d1117;
+      box-shadow: 0 12px 28px rgba(131, 207, 170, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(131, 207, 170, 0.2);
+    }
+
+    .hero {
+      padding: 70px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, var(--hero-glow-1), transparent 28%),
+        radial-gradient(circle at 80% 10%, var(--hero-glow-2), transparent 26%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin: 22px 0 20px;
+    }
+
+    .hero-copy p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--text-soft);
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 0 26px;
+      border-radius: 18px;
+      font-size: 16px;
+      font-weight: 800;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+      gap: 12px;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      color: #0c1117;
+      box-shadow: 0 18px 40px rgba(130, 169, 212, 0.18);
+    }
+
+    .btn-primary img {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .hero-proof {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--text-dim);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero-proof span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-proof b {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .hero-stack {
+      position: relative;
+      min-height: 720px;
+    }
+
+    .glass-card {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(135deg, rgba(20, 28, 47, 0.9), rgba(31, 34, 42, 0.92));
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .glass-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.01)
+      );
+      pointer-events: none;
+    }
+
+    .hero-card-main {
+      top: 10px;
+      left: 0;
+      padding: 28px;
+      min-height: 280px;
+    }
+
+    .hero-card-main h3 {
+      font-size: 18px;
+      color: var(--text-soft);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-main .value {
+      font-size: 74px;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-main .sub {
+      font-size: 16px;
+      color: var(--text-soft);
+      margin-bottom: 28px;
+    }
+
+    .main-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 22px;
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metric .icon {
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .hero-card-risk {
+      top: 320px;
+      left: 22px;
+      width: calc(100% - 44px);
+      padding: 24px 28px;
+      min-height: 170px;
+      background:
+        linear-gradient(135deg, rgba(49, 14, 16, 0.95), rgba(35, 8, 12, 0.92));
+      border: 1px solid rgba(239, 116, 109, 0.22);
+    }
+
+    .risk-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .risk-copy h4 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .risk-copy p {
+      font-size: 15px;
+      color: #c89a97;
+    }
+
+    .risk-value {
+      text-align: right;
+      color: var(--red);
+    }
+
+    .risk-value strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .risk-value span {
+      font-size: 14px;
+      color: #c89a97;
+    }
+
+    .risk-bar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .risk-bar-fill {
+      width: 32%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f0c24f 0%, var(--red) 100%);
+    }
+
+    .risk-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: #c89a97;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .risk-bottom a {
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    .hero-card-cats {
+      top: 520px;
+      right: 0;
+      padding: 26px 28px;
+      min-height: 220px;
+    }
+
+    .cats-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .cats-top h4 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .cats-top strong {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .cats-body {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .donut {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background: conic-gradient(
+        var(--blue) 0 66%,
+        var(--mint) 66% 91%,
+        var(--purple) 91% 97%,
+        #f46d92 97% 100%
+      );
+      position: relative;
+    }
+
+    .donut::before {
+      content: "4\A categories";
+      white-space: pre;
+      position: absolute;
+      inset: 28px;
+      border-radius: 50%;
+      background: #191d27;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.25;
+      color: var(--text-soft);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    }
+
+    .donut::after {
+      content: "4";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--text);
+      transform: translateY(-12px);
+      pointer-events: none;
+    }
+
+    .cat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 16px;
+      color: var(--text-soft);
+    }
+
+    .cat-item-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cat-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+
+    .cat-item strong {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .cat-blue {
+      background: var(--blue);
+    }
+
+    .cat-mint {
+      background: var(--mint);
+    }
+
+    .cat-purple {
+      background: var(--purple);
+    }
+
+    .cat-pink {
+      background: #f46d92;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 25, 34, 0.92), rgba(15, 17, 25, 0.88));
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .feature-card .feature-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .tone-blue {
+      background: rgba(130, 169, 212, 0.13);
+      color: var(--blue);
+    }
+
+    .tone-gold {
+      background: rgba(240, 194, 79, 0.14);
+      color: var(--gold);
+    }
+
+    .tone-mint {
+      background: rgba(131, 207, 170, 0.14);
+      color: var(--mint);
+    }
+
+    .tone-red {
+      background: rgba(239, 116, 109, 0.14);
+      color: var(--red);
+    }
+
+    .tone-purple {
+      background: rgba(141, 93, 246, 0.14);
+      color: var(--purple);
+    }
+
+    .feature-card h3 {
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .tracking-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(19, 23, 33, 0.94), rgba(27, 30, 39, 0.92));
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .panel h3 {
+      font-size: 26px;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .panel p {
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .mini-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mini-item {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      min-height: 92px;
+      border-radius: 20px;
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .mini-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+    }
+
+    .mini-copy strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .mini-copy span {
+      display: block;
+      color: var(--text-soft);
+      font-size: 15px;
+    }
+
+    .mini-status {
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .status-red {
+      color: var(--red);
+    }
+
+    .status-gold {
+      color: var(--gold);
+    }
+
+    .status-blue {
+      color: var(--blue);
+    }
+
+    .status-mint {
+      color: var(--mint);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 24, 32, 0.94), rgba(15, 18, 25, 0.9));
+      padding: 30px 26px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(131, 207, 170, 0.18), rgba(130, 169, 212, 0.18));
+      border: 1px solid rgba(131, 207, 170, 0.18);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .step-card h3 {
+      font-size: 22px;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .price-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(19, 23, 32, 0.95), rgba(12, 15, 22, 0.92));
+      padding: 30px 28px;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border-color: rgba(131, 207, 170, 0.38);
+      background:
+        linear-gradient(180deg, rgba(131, 207, 170, 0.08), rgba(20, 24, 33, 0.95));
+    }
+
+    .price-card.featured::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--mint) 0%, var(--blue) 100%);
+    }
+
+    .price-top {
+      margin-bottom: 18px;
+    }
+
+    .price-label {
+      font-size: 16px;
+      color: var(--text-soft);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .price-amount {
+      font-size: 52px;
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .price-amount span {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-soft);
+      letter-spacing: 0;
+      margin-left: 4px;
+    }
+
+    .price-sub {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .pill-green {
+      background: rgba(131, 207, 170, 0.12);
+      color: var(--mint);
+      border: 1px solid rgba(131, 207, 170, 0.18);
+    }
+
+    .pill-purple {
+      background: rgba(141, 93, 246, 0.12);
+      color: #b89cff;
+      border: 1px solid rgba(141, 93, 246, 0.18);
+    }
+
+    .price-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 22px 0 26px;
+    }
+
+    .price-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .price-list .check {
+      color: var(--mint);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .price-button {
+      width: 100%;
+      min-height: 54px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 800;
+      border: 1px solid var(--stroke);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .price-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .price-button.primary {
+      border: none;
+      color: #0c1117;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+    }
+
+    .price-button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .faq-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 25, 33, 0.92), rgba(13, 16, 22, 0.9));
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .faq-btn {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      color: var(--text);
+      font: inherit;
+      text-align: left;
+      padding: 22px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+    }
+
+    .faq-btn span:first-child {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      color: var(--text-dim);
+      font-size: 14px;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease, padding 0.28s ease;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 0 22px;
+    }
+
+    .faq-item.open .faq-body {
+      max-height: 240px;
+      padding: 0 22px 22px;
+    }
+
+    .cta-panel {
+      border-radius: 36px;
+      border: 1px solid rgba(131, 207, 170, 0.18);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(131, 207, 170, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(130, 169, 212, 0.12), transparent 25%),
+        linear-gradient(135deg, rgba(18, 23, 32, 0.96), rgba(10, 12, 18, 0.96));
+      padding: 54px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-panel h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    .cta-panel p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    footer {
+      padding: 30px 0 54px;
+    }
+
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-dim);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-copy {
+      color: var(--text-dim);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .tracking-board {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stack {
+        min-height: 860px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .info-grid,
+      .steps,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stack {
+        min-height: 900px;
+      }
+
+      .main-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .hero {
+        padding: 48px 0 56px;
+      }
+
+      .hero-copy p,
+      .section-header p,
+      .cta-panel p {
+        font-size: 17px;
+      }
+
+      .hero-stack {
+        min-height: 960px;
+      }
+
+      .hero-card-main {
+        min-height: 320px;
+      }
+
+      .hero-card-risk {
+        top: 360px;
+      }
+
+      .hero-card-cats {
+        top: 560px;
+      }
+
+      .cats-body {
+        grid-template-columns: 1fr;
+      }
+
+      .donut {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .nav-wrap {
+        min-height: 74px;
+      }
+
+      .brand span {
+        font-size: 18px;
+      }
+
+      .nav-cta {
+        min-height: 44px;
+        padding: 0 16px;
+        font-size: 13px;
+      }
+
+      .hero-copy h1 {
+        font-size: 44px;
+      }
+
+      .hero-stack {
+        min-height: 1000px;
+      }
+
+      .hero-card-main {
+        padding: 22px;
+      }
+
+      .hero-card-main .value {
+        font-size: 58px;
+      }
+
+      .main-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 10px;
+      }
+
+      .hero-card-risk {
+        top: 350px;
+        left: 10px;
+        width: calc(100% - 20px);
+        padding: 22px;
+      }
+
+      .risk-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .risk-value {
+        text-align: left;
+      }
+
+      .hero-card-cats {
+        top: 585px;
+        padding: 22px;
+      }
+
+      .cats-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cats-body {
+        gap: 18px;
+      }
+
+      .mini-item {
+        grid-template-columns: 56px 1fr;
+      }
+
+      .mini-status {
+        grid-column: 2 / 3;
+      }
+
+      .footer-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stack {
+        min-height: 1040px;
+      }
+
+      .hero-card-main .value {
+        font-size: 50px;
+      }
+
+      .metric strong {
+        font-size: 28px;
+      }
+
+      .hero-card-risk {
+        top: 340px;
+      }
+
+      .hero-card-cats {
+        top: 605px;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-actions .btn-primary,
+      .cta-actions .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <a
+        href="/"
+        class="brand"
+        aria-label="Retryn home"
+      >
+        <img
+          src="icon.png"
+          alt="Retryn"
+        />
+        <span>Retryn</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#tracking">Preview</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <a
+        href="https://apps.apple.com/app/retryn"
+        class="nav-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download Free
+      </a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal visible">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Now on iPhone
         </span>
+
+        <h1>
+          Your shopping does not end at <span class="gradient-text">checkout.</span>
+        </h1>
+
+        <p>
+          Retryn tracks packages, return windows, refunds, and warranties in one calm dashboard, so you stop losing money to missed deadlines.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            href="https://apps.apple.com/app/retryn"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="icon.png"
+              alt="Retryn"
+            />
+            Download on the App Store
+          </a>
+
+          <a
+            href="#features"
+            class="btn-secondary"
+          >
+            See how it works
+          </a>
+        </div>
+
+        <div class="hero-proof">
+          <span><b>Packages</b> in transit</span>
+          <span><b>Returns</b> due soon</span>
+          <span><b>Refunds</b> in progress</span>
+          <span><b>Vault</b> ready when needed</span>
+        </div>
       </div>
 
-      <h1 class="hero-heading fade-up delay-1">
-        Stop losing money to<br />
-        <span class="gradient-text">missed deadlines.</span>
-      </h1>
+      <div class="hero-stack reveal delay-1 visible">
+        <div class="glass-card hero-card-main">
+          <h3>Good evening 👋</h3>
+          <div class="value">$3,524</div>
+          <div class="sub">total portfolio value</div>
 
-      <p class="hero-sub fade-up delay-2">
-        Retryn automatically tracks your return windows, warranty expirations,
-        and refund statuses, so you never leave money on the table again.
-      </p>
+          <div class="main-metrics">
+            <div class="metric">
+              <span class="icon" style="color: var(--blue);">📦</span>
+              <strong>2</strong>
+              <span>In Transit</span>
+            </div>
 
-      <div class="hero-ctas fade-up delay-3">
-        <a
-          href="https://apps.apple.com/app/retryn"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="icon.png"
-            alt="Retryn"
-          />
-          Download Free
-        </a>
+            <div class="metric">
+              <span class="icon" style="color: var(--gold);">🕘</span>
+              <strong>2</strong>
+              <span>Due Soon</span>
+            </div>
 
-        <a
-          href="#features"
-          class="btn-ghost"
-        >
-          See how it works
-        </a>
+            <div class="metric">
+              <span class="icon" style="color: var(--red);">💲</span>
+              <strong>2</strong>
+              <span>Refunds</span>
+            </div>
+
+            <div class="metric">
+              <span class="icon" style="color: var(--mint);">🛡</span>
+              <strong>1</strong>
+              <span>Warranties</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card hero-card-risk">
+          <div class="risk-top">
+            <div class="risk-copy">
+              <h4>Money at Risk</h4>
+              <p>2 items expire soon</p>
+            </div>
+
+            <div class="risk-value">
+              <strong>$229.89</strong>
+              <span>6% of portfolio</span>
+            </div>
+          </div>
+
+          <div class="risk-bar">
+            <div class="risk-bar-fill"></div>
+          </div>
+
+          <div class="risk-bottom">
+            <span>Act before deadlines pass</span>
+            <a href="#pricing">Return now →</a>
+          </div>
+        </div>
+
+        <div class="glass-card hero-card-cats">
+          <div class="cats-top">
+            <h4>Spending by Category</h4>
+            <strong>$3,523</strong>
+          </div>
+
+          <div class="cats-body">
+            <div class="donut" aria-hidden="true"></div>
+
+            <div class="cat-list">
+              <div class="cat-item">
+                <div class="cat-item-left">
+                  <span class="cat-dot cat-blue"></span>
+                  <span>Electronics</span>
+                </div>
+                <strong style="color: var(--blue);">66%</strong>
+              </div>
+
+              <div class="cat-item">
+                <div class="cat-item-left">
+                  <span class="cat-dot cat-mint"></span>
+                  <span>Home</span>
+                </div>
+                <strong style="color: var(--mint);">25%</strong>
+              </div>
+
+              <div class="cat-item">
+                <div class="cat-item-left">
+                  <span class="cat-dot cat-purple"></span>
+                  <span>Apparel</span>
+                </div>
+                <strong style="color: var(--purple);">6%</strong>
+              </div>
+
+              <div class="cat-item">
+                <div class="cat-item-left">
+                  <span class="cat-dot cat-pink"></span>
+                  <span>Beauty</span>
+                </div>
+                <strong style="color: #f46d92;">1%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="hero-trust fade-up delay-4">
-        <span class="hero-stars">★★★★★</span>
-        <span>
-          Built for shoppers who are done missing return and warranty deadlines.
+  <section
+    class="section"
+    id="features"
+  >
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Why Retryn
         </span>
+
+        <h2>
+          A cleaner, calmer way to manage everything <span class="gradient-text">after you buy.</span>
+        </h2>
+
+        <p>
+          The app screens use soft contrast, deep charcoal surfaces, mint and blue highlights, and sharp priority colors. This page now follows the same visual system.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <article class="feature-card reveal delay-1">
+          <div class="feature-badge tone-blue">📦</div>
+          <h3>Track active packages</h3>
+          <p>
+            See what shipped, what arrives today, and what already landed, without digging through email or carrier pages.
+          </p>
+        </article>
+
+        <article class="feature-card reveal delay-2">
+          <div class="feature-badge tone-gold">🗓</div>
+          <h3>Protect return windows</h3>
+          <p>
+            Know exactly how many days remain and act before deadlines turn into lost money.
+          </p>
+        </article>
+
+        <article class="feature-card reveal delay-3">
+          <div class="feature-badge tone-mint">🔔</div>
+          <h3>Get timely reminders</h3>
+          <p>
+            Receive alerts before a return closes or a warranty expires, not after support says it is too late.
+          </p>
+        </article>
+
+        <article class="feature-card reveal delay-1">
+          <div class="feature-badge tone-red">💸</div>
+          <h3>Watch pending refunds</h3>
+          <p>
+            Keep a clean view of what is still pending, what is processing, and what already returned to your account.
+          </p>
+        </article>
+
+        <article class="feature-card reveal delay-2">
+          <div class="feature-badge tone-purple">🔐</div>
+          <h3>Store proof in a vault</h3>
+          <p>
+            Keep receipts, claim records, and warranty details in one place, ready to share in seconds.
+          </p>
+        </article>
+
+        <article class="feature-card reveal delay-3">
+          <div class="feature-badge tone-mint">🧭</div>
+          <h3>See the full picture fast</h3>
+          <p>
+            Open one dashboard and know what needs attention today, what stays protected, and where your money sits.
+          </p>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="hero-mockup fade-up delay-2">
-      <div class="phone-ring"></div>
-      <div class="phone-ring"></div>
+  <section
+    class="section"
+    id="tracking"
+  >
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          App preview
+        </span>
 
-      <div
-        class="phone-frame"
-        aria-hidden="true"
-      >
-        <div class="phone-notch"></div>
+        <h2>
+          Built around the same dashboard language shown inside <span class="gradient-text">your app screens.</span>
+        </h2>
 
-        <div class="phone-inner">
-          <div class="phone-hero-card">
-            <div class="phone-hero-label">Protected this month</div>
-            <div class="phone-hero-amount">$247</div>
-            <div class="phone-hero-sub">
-              Tracked across returns, warranties, and refunds
-            </div>
+        <p>
+          Strong hierarchy. Softer panels. Clear priority states. Better spacing. Better contrast. Better flow.
+        </p>
+      </div>
 
-            <div class="phone-hero-row">
-              <div class="phone-stat">
-                <div class="phone-stat-val">6</div>
-                <div class="phone-stat-label">Open returns</div>
+      <div class="tracking-board">
+        <div class="panel reveal delay-1">
+          <h3>What needs action now</h3>
+          <p>
+            Critical deadlines rise to the top. Urgent items stand out fast with stronger contrast and cleaner status styling.
+          </p>
+
+          <div class="mini-list">
+            <div class="mini-item">
+              <div class="mini-icon tone-red">!</div>
+              <div class="mini-copy">
+                <strong>Air Max 90 — Cloud White</strong>
+                <span>Nike · return deadline tomorrow</span>
               </div>
+              <div class="mini-status status-red">Critical</div>
+            </div>
 
-              <div class="phone-stat">
-                <div class="phone-stat-val">14</div>
-                <div class="phone-stat-label">Active warranties</div>
+            <div class="mini-item">
+              <div class="mini-icon tone-gold">⏳</div>
+              <div class="mini-copy">
+                <strong>MacBook Pro 14" M4</strong>
+                <span>Warranty ends in 28 days</span>
               </div>
+              <div class="mini-status status-gold">Soon</div>
+            </div>
 
-              <div class="phone-stat">
-                <div class="phone-stat-val">3</div>
-                <div class="phone-stat-label">Refunds due</div>
+            <div class="mini-item">
+              <div class="mini-icon tone-blue">💲</div>
+              <div class="mini-copy">
+                <strong>Rare Beauty Blush Set</strong>
+                <span>Refund still processing</span>
               </div>
+              <div class="mini-status status-blue">Pending</div>
             </div>
-          </div>
-
-          <div class="phone-row">
-            <div class="phone-row-icon badge-warning">⏰</div>
-            <div class="phone-row-body">
-              <div class="phone-row-name">AirPods Pro</div>
-              <div class="phone-row-meta">Return deadline in 2 days</div>
-            </div>
-            <span class="phone-row-badge badge-warning">Urgent</span>
-          </div>
-
-          <div class="phone-row">
-            <div class="phone-row-icon badge-green">✓</div>
-            <div class="phone-row-body">
-              <div class="phone-row-name">Nike Running Shoes</div>
-              <div class="phone-row-meta">Refund received</div>
-            </div>
-            <span class="phone-row-badge badge-green">Closed</span>
-          </div>
-
-          <div class="phone-row">
-            <div class="phone-row-icon badge-blue">🛡</div>
-            <div class="phone-row-body">
-              <div class="phone-row-name">KitchenAid Mixer</div>
-              <div class="phone-row-meta">Warranty active for 11 months</div>
-            </div>
-            <span class="phone-row-badge badge-blue">Covered</span>
-          </div>
-
-          <div class="phone-row">
-            <div class="phone-row-icon badge-danger">!</div>
-            <div class="phone-row-body">
-              <div class="phone-row-name">Amazon Order #4831</div>
-              <div class="phone-row-meta">Refund still pending</div>
-            </div>
-            <span class="phone-row-badge badge-danger">Follow up</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section> <section class="stats-banner"> <div class="container"> <div class="stats-grid"> <div class="stat-item"> <div class="stat-num">1 App</div> <div class="stat-label">To track returns and warranties</div> </div>
-    <div class="stat-item">
-      <div class="stat-num">0 Missed</div>
-      <div class="stat-label">Deadlines when reminders are on</div>
-    </div>
 
-    <div class="stat-item">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Access to your purchase vault</div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-num">Fast</div>
-      <div class="stat-label">Receipt capture and tracking setup</div>
-    </div>
-  </div>
-</div>
-    <div class="stat-item">
-      <div class="stat-num">0 Missed</div>
-      <div class="stat-label">Deadlines when reminders are on</div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Access to your purchase vault</div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-num">Fast</div>
-      <div class="stat-label">Receipt capture and tracking setup</div>
-    </div>
-  </div>
-</div>
-      <div class="stat-item">
-      <div class="stat-num">0 Missed</div>
-      <div class="stat-label">Deadlines when reminders are on</div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Access to your purchase vault</div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-num">Fast</div>
-      <div class="stat-label">Receipt capture and tracking setup</div>
-    </div>
-  </div>
-</div>
-  </section> <section class="section"> <div class="container"> <div class="section-center fade-up"> <div class="section-label">The problem</div> <h2 class="section-title"> Money slips away when your deadlines live in email, memory, and chaos. </h2> <p class="section-desc"> Most people remember the purchase, then forget the deadline. By the time something breaks, the warranty is gone. By the time a refund stalls, the window is closed. </p> </div>
-    <div class="problem-grid">
-    <div class="problem-card fade-up delay-1">
-      <div class="problem-icon red">↩</div>
-      <h3>Return windows close fast</h3>
-      <p>
-        Retailers give limited time. If the reminder never comes, your item
-        stays with you and your money does not.
-      </p>
-    </div>
-
-    <div class="problem-card fade-up delay-2">
-      <div class="problem-icon amber">🧾</div>
-      <h3>Receipts disappear</h3>
-      <p>
-        Email receipts, screenshots, paper slips, and warranty documents end up
-        scattered across apps and folders.
-      </p>
-    </div>
-
-    <div class="problem-card fade-up delay-3">
-      <div class="problem-icon blue">🛡</div>
-      <h3>Warranties get wasted</h3>
-      <p>
-        People pay for products with coverage, then forget the expiration date
-        until it is too late to use it.
-      </p>
-    </div>
-  </div>
-</div>
-</section> <section class="section features-bg" id="features" > <div class="container"> <div class="section-center fade-up"> <div class="section-label">Features</div> <h2 class="section-title"> Everything you need to stay ahead of returns, refunds, and warranties. </h2> <p class="section-desc"> Retryn keeps your purchase life organized in one place and surfaces what needs attention before you lose money. </p> </div>
-  <div class="features-grid">
-    <div class="feature-list">
-      <div class="feature-item fade-up delay-1">
-        <div class="feature-icon-wrap">📸</div>
-        <div class="feature-text">
-          <h3>Capture receipts fast</h3>
+        <div class="panel reveal delay-2">
+          <h3>What stays protected</h3>
           <p>
-            Snap, upload, or save your proof of purchase so your paperwork is
-            easy to find when you need it.
+            Stored proof, shipment updates, and live warranty coverage stay organized in one steady view.
           </p>
-        </div>
-      </div>
 
-      <div class="feature-item fade-up delay-2">
-        <div class="feature-icon-wrap">⏱</div>
-        <div class="feature-text">
-          <h3>Track return deadlines</h3>
-          <p>
-            See which items are urgent, which are safe, and which need action
-            now.
-          </p>
-        </div>
-      </div>
-
-      <div class="feature-item fade-up delay-3">
-        <div class="feature-icon-wrap">🔔</div>
-        <div class="feature-text">
-          <h3>Get reminder notifications</h3>
-          <p>
-            Receive timely alerts before return windows close or warranty
-            coverage expires.
-          </p>
-        </div>
-      </div>
-
-      <div class="feature-item fade-up delay-4">
-        <div class="feature-icon-wrap">📂</div>
-        <div class="feature-text">
-          <h3>Store warranties in one vault</h3>
-          <p>
-            Keep product documentation, warranty coverage, and related files
-            together in one secure place.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="features-visual fade-up delay-2">
-      <div class="visual-title">Live timeline view</div>
-
-      <div class="timeline-list">
-        <div class="timeline-item">
-          <div class="timeline-dot dot-green">1</div>
-          <div class="timeline-body">
-            <div class="timeline-name">Purchase logged</div>
-            <div class="timeline-meta">
-              Receipt saved and return window started
+          <div class="mini-list">
+            <div class="mini-item">
+              <div class="mini-icon tone-blue">📦</div>
+              <div class="mini-copy">
+                <strong>Sony WH-1000XM5 Headphones</strong>
+                <span>Amazon · shipped</span>
+              </div>
+              <div class="mini-status status-blue">In transit</div>
             </div>
-            <span class="timeline-status s-green">Tracked</span>
-          </div>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot dot-amber">2</div>
-          <div class="timeline-body">
-            <div class="timeline-name">Reminder sent</div>
-            <div class="timeline-meta">Deadline approaching soon</div>
-            <span class="timeline-status s-amber">Action needed</span>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot dot-red">3</div>
-          <div class="timeline-body">
-            <div class="timeline-name">Refund follow-up</div>
-            <div class="timeline-meta">Payment still pending from seller</div>
-            <span class="timeline-status s-red">Pending</span>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot dot-blue">4</div>
-          <div class="timeline-body">
-            <div class="timeline-name">Warranty active</div>
-            <div class="timeline-meta">
-              Coverage still valid and easy to access
+            <div class="mini-item">
+              <div class="mini-icon tone-mint">🧾</div>
+              <div class="mini-copy">
+                <strong>Dyson V15 Detect Vacuum</strong>
+                <span>Receipt saved and backed up</span>
+              </div>
+              <div class="mini-status status-mint">Stored</div>
             </div>
-            <span class="timeline-status s-blue">Protected</span>
+
+            <div class="mini-item">
+              <div class="mini-icon tone-mint">🛡</div>
+              <div class="mini-copy">
+                <strong>KitchenAid Mixer</strong>
+                <span>Coverage active for 11 more months</span>
+              </div>
+              <div class="mini-status status-mint">Protected</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</section> <section class="section" id="how" > <div class="container"> <div class="section-center fade-up"> <div class="section-label">How it works</div> <h2 class="section-title">Three simple steps.</h2> <p class="section-desc"> Set it up once, then let Retryn keep watch over every purchase that matters. </p> </div>
-  <div class="how-grid">
-    <div class="how-card fade-up delay-1">
-      <div class="how-number">1</div>
-      <h3>Add your purchase</h3>
-      <p>
-        Enter the item, attach the receipt, and save the purchase date and
-        store details.
-      </p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          How it works
+        </span>
+
+        <h2>
+          Set it up once. Retryn handles the rest.
+        </h2>
+
+        <p>
+          The flow stays simple. Add a purchase. Save proof. Receive reminders before money slips away.
+        </p>
+      </div>
+
+      <div class="steps">
+        <article class="step-card reveal delay-1">
+          <div class="step-number">1</div>
+          <h3>Add your first order</h3>
+          <p>
+            Save the store, item, price, and category. Turn on the return window when the purchase qualifies.
+          </p>
+        </article>
+
+        <article class="step-card reveal delay-2">
+          <div class="step-number">2</div>
+          <h3>Store proof and coverage</h3>
+          <p>
+            Keep receipts, warranty cards, and claim records in one secure vault that stays ready when support asks for proof.
+          </p>
+        </article>
+
+        <article class="step-card reveal delay-3">
+          <div class="step-number">3</div>
+          <h3>Act before deadlines hit</h3>
+          <p>
+            Open the dashboard, see what is critical, and move fast while the return, refund, or warranty still stays valid.
+          </p>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="how-card fade-up delay-2">
-      <div class="how-number">2</div>
-      <h3>Let Retryn track it</h3>
-      <p>
-        Return windows, refund progress, and warranty timelines stay organized
-        automatically.
-      </p>
+  <section
+    class="section"
+    id="pricing"
+  >
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Pricing
+        </span>
+
+        <h2>
+          Pick the plan that fits your shopping habits.
+        </h2>
+
+        <p>
+          Start free. Upgrade when you want unlimited tracking, vault storage, refund monitoring, and home screen widgets.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card reveal delay-1">
+          <div class="price-top">
+            <div class="price-label">Free</div>
+            <div class="price-amount">$0<span>/mo</span></div>
+            <div class="price-sub">A clean start for occasional orders and basic return tracking.</div>
+          </div>
+
+          <ul class="price-list">
+            <li><span class="check">✓</span><span>Basic order tracking</span></li>
+            <li><span class="check">✓</span><span>Return reminders</span></li>
+            <li><span class="check">✓</span><span>Simple dashboard access</span></li>
+            <li><span class="check">✓</span><span>Starter vault storage</span></li>
+          </ul>
+
+          <a
+            href="https://apps.apple.com/app/retryn"
+            class="price-button secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start Free
+          </a>
+        </article>
+
+        <article class="price-card featured reveal delay-2">
+          <span class="pill pill-green">Best Value</span>
+
+          <div class="price-top">
+            <div class="price-label">Yearly</div>
+            <div class="price-amount">$29.99<span>/yr</span></div>
+            <div class="price-sub">Save versus monthly and keep everything active all year.</div>
+          </div>
+
+          <ul class="price-list">
+            <li><span class="check">✓</span><span>Unlimited order tracking</span></li>
+            <li><span class="check">✓</span><span>Return deadline reminders</span></li>
+            <li><span class="check">✓</span><span>Receipt and warranty vault</span></li>
+            <li><span class="check">✓</span><span>Refund status monitoring</span></li>
+            <li><span class="check">✓</span><span>One-tap claim export</span></li>
+            <li><span class="check">✓</span><span>Home screen widgets</span></li>
+          </ul>
+
+          <a
+            href="https://apps.apple.com/app/retryn"
+            class="price-button primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Retryn Pro
+          </a>
+        </article>
+
+        <article class="price-card reveal delay-3">
+          <span class="pill pill-purple">One Time</span>
+
+          <div class="price-top">
+            <div class="price-label">Lifetime</div>
+            <div class="price-amount">$69.99</div>
+            <div class="price-sub">Pay once and keep pro access tied to your account.</div>
+          </div>
+
+          <ul class="price-list">
+            <li><span class="check">✓</span><span>Everything in Pro</span></li>
+            <li><span class="check">✓</span><span>Long-term value for heavy shoppers</span></li>
+            <li><span class="check">✓</span><span>No renewal cycle</span></li>
+            <li><span class="check">✓</span><span>Own it once, keep it</span></li>
+          </ul>
+
+          <a
+            href="https://apps.apple.com/app/retryn"
+            class="price-button secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Choose Lifetime
+          </a>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="how-card fade-up delay-3">
-      <div class="how-number">3</div>
-      <h3>Take action on time</h3>
-      <p>
-        Get reminders before deadlines, not after the money is gone.
-      </p>
-    </div>
-  </div>
-</div>
-</section> <section class="section" id="pricing" > <div class="container"> <div class="section-center fade-up"> <div class="section-label">Pricing</div> <h2 class="section-title">Choose the plan that fits how you shop.</h2> <p class="section-desc"> Start free, upgrade when you want more tracking power, vault storage, and premium features. </p> </div>
-  <div class="pricing-grid">
-    <div class="price-card fade-up delay-1">
-      <div class="price-name">Free</div>
-      <div class="price-amount">$0<span>/mo</span></div>
-      <div class="price-period">Great for getting started</div>
+  <section
+    class="section"
+    id="faq"
+  >
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          FAQ
+        </span>
 
-      <ul class="price-features">
-        <li><span class="check">✓</span><span>Basic purchase tracking</span></li>
-        <li><span class="check">✓</span><span>Return deadline reminders</span></li>
-        <li><span class="check">✓</span><span>Limited vault storage</span></li>
-        <li><span class="x">×</span><span>Unlimited item tracking</span></li>
-        <li><span class="x">×</span><span>Premium widgets</span></li>
-      </ul>
+        <h2>
+          Clear answers before you download.
+        </h2>
 
-      <a
-        href="https://apps.apple.com/app/retryn"
-        class="btn-price secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Start Free
-      </a>
-    </div>
+        <p>
+          These are the questions people ask most before they start tracking purchases with Retryn.
+        </p>
+      </div>
 
-    <div class="price-card featured fade-up delay-2">
-      <div class="price-popular">Most popular</div>
-      <div class="price-name">Pro Monthly</div>
-      <div class="price-amount">$4.99<span>/mo</span></div>
-      <div class="price-period">Flexible monthly access</div>
+      <div class="faq-wrap">
+        <div class="faq-item reveal">
+          <button
+            class="faq-btn"
+            type="button"
+          >
+            <span>What does Retryn track?</span>
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-body">
+            Retryn tracks packages, return windows, refunds, receipts, claim records, and warranty coverage in one dashboard.
+          </div>
+        </div>
 
-      <ul class="price-features">
-        <li><span class="check">✓</span><span>Unlimited purchase tracking</span></li>
-        <li><span class="check">✓</span><span>Full warranty vault</span></li>
-        <li><span class="check">✓</span><span>Refund tracking tools</span></li>
-        <li><span class="check">✓</span><span>Premium reminder controls</span></li>
-        <li><span class="check">✓</span><span>Widgets and future Pro features</span></li>
-      </ul>
+        <div class="faq-item reveal delay-1">
+          <button
+            class="faq-btn"
+            type="button"
+          >
+            <span>Do I need to forward order emails?</span>
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-body">
+            No. The app flow shown in your screenshots focuses on adding orders directly, which keeps setup cleaner and faster.
+          </div>
+        </div>
 
-      <a
-        href="https://apps.apple.com/app/retryn"
-        class="btn-price primary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Go Pro
-      </a>
-    </div>
+        <div class="faq-item reveal delay-2">
+          <button
+            class="faq-btn"
+            type="button"
+          >
+            <span>Why does this page look closer to the app now?</span>
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-body">
+            The layout now uses the same dark surfaces, mint and blue action colors, softer card gradients, priority reds and golds, and stronger spacing rhythm shown in the app.
+          </div>
+        </div>
 
-    <div class="price-card fade-up delay-3">
-      <div class="price-name">Pro Yearly</div>
-      <div class="price-amount">$39.99<span>/yr</span></div>
-      <div class="price-save">Save versus monthly</div>
-      <div class="price-period">Best value for regular shoppers</div>
-
-      <ul class="price-features">
-        <li><span class="check">✓</span><span>Everything in Pro Monthly</span></li>
-        <li><span class="check">✓</span><span>Lower effective monthly price</span></li>
-        <li><span class="check">✓</span><span>Priority access to new Pro tools</span></li>
-        <li><span class="check">✓</span><span>Ideal for year-round tracking</span></li>
-        <li><span class="check">✓</span><span>One simple yearly billing cycle</span></li>
-      </ul>
-
-      <a
-        href="https://apps.apple.com/app/retryn"
-        class="btn-price secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Choose Yearly
-      </a>
-    </div>
-  </div>
-</div>
-</section> <section class="section testimonials-bg"> <div class="container"> <div class="section-center fade-up"> <div class="section-label">What users want</div> <h2 class="section-title">Built for real shopping pain points.</h2> <p class="section-desc"> From impulse buys to major purchases, Retryn helps people stay organized and act before deadlines hit. </p> </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card fade-up delay-1">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">
-        “I always forget return deadlines. Having one place for receipts and
-        reminders fixes that.”
-      </p>
-      <div class="testimonial-author">
-        <div class="author-avatar">A</div>
-        <div>
-          <div class="author-name">App Store shopper</div>
-          <div class="author-meta">Frequent online buyer</div>
+        <div class="faq-item reveal delay-3">
+          <button
+            class="faq-btn"
+            type="button"
+          >
+            <span>Will this paste into GitHub without edits?</span>
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-body">
+            Yes. Paste this full file into your HTML page as one replacement. Add no extra space blocks before or after it.
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="testimonial-card fade-up delay-2">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">
-        “The warranty vault is the part I need most. I never know where those
-        documents end up.”
-      </p>
-      <div class="testimonial-author">
-        <div class="author-avatar">J</div>
-        <div>
-          <div class="author-name">Early user</div>
-          <div class="author-meta">Home and tech purchases</div>
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <h2>
+          Never miss a deadline again.
+        </h2>
+
+        <p>
+          Retryn gives every order a place, every warranty a vault, and every deadline a reminder before your money goes missing.
+        </p>
+
+        <div class="cta-actions">
+          <a
+            href="https://apps.apple.com/app/retryn"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="icon.png"
+              alt="Retryn"
+            />
+            Download on the App Store
+          </a>
+
+          <a
+            href="/privacy.html"
+            class="btn-secondary"
+          >
+            View Privacy Policy
+          </a>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="testimonial-card fade-up delay-3">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">
-        “Refund tracking gives me peace of mind. I know what is pending and
-        what still needs follow-up.”
-      </p>
-      <div class="testimonial-author">
-        <div class="author-avatar">M</div>
-        <div>
-          <div class="author-name">Beta tester</div>
-          <div class="author-meta">Busy parent and shopper</div>
-        </div>
+  <footer>
+    <div class="container footer-bar">
+      <div class="brand">
+        <img
+          src="icon.png"
+          alt="Retryn"
+        />
+        <span>Retryn</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#tracking">Preview</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+
+      <div class="footer-copy">
+        © <span id="year"></span> Retryn. All rights reserved.
       </div>
     </div>
-  </div>
-</div>
-</section> <section class="section" id="faq" > <div class="container"> <div class="section-center fade-up"> <div class="section-label">FAQ</div> <h2 class="section-title">Questions people ask before they download.</h2> <p class="section-desc"> Everything you need to know before you start tracking your purchases with Retryn. </p> </div>
-  <div class="faq-list">
-    <div class="faq-item fade-up">
-      <button
-        class="faq-q"
-        type="button"
-      >
-        <span>What does Retryn track?</span>
-        <span class="faq-arrow">⌄</span>
-      </button>
-      <div class="faq-a">
-        Retryn tracks purchase dates, return windows, refund statuses,
-        warranty timelines, and the documents connected to those purchases.
-      </div>
-    </div>
+  </footer>
 
-    <div class="faq-item fade-up delay-1">
-      <button
-        class="faq-q"
-        type="button"
-      >
-        <span>Do I need to keep paper receipts?</span>
-        <span class="faq-arrow">⌄</span>
-      </button>
-      <div class="faq-a">
-        You can save receipts digitally in Retryn, which makes them easier to
-        find when you need to process a return or make a warranty claim.
-      </div>
-    </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    <div class="faq-item fade-up delay-2">
-      <button
-        class="faq-q"
-        type="button"
-      >
-        <span>Will I get reminders before deadlines?</span>
-        <span class="faq-arrow">⌄</span>
-      </button>
-      <div class="faq-a">
-        Yes. Retryn uses notifications to alert you before return deadlines and
-        warranty expirations so you have time to act.
-      </div>
-    </div>
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
 
-    <div class="faq-item fade-up delay-3">
-      <button
-        class="faq-q"
-        type="button"
-      >
-        <span>Is there a free version?</span>
-        <span class="faq-arrow">⌄</span>
-      </button>
-      <div class="faq-a">
-        Yes. You can start with the free version and upgrade later if you want
-        more storage, more tracking capacity, or Pro features.
-      </div>
-    </div>
-  </div>
-</div>
-</section> <section class="final-cta"> <div class="final-cta-glow"></div>
-<div class="container">
-  <div class="section-center fade-up visible">
-    <div class="section-label">Get started</div>
-    <h2 class="section-title">Keep every purchase working for you.</h2>
-    <p class="section-desc">
-      Download Retryn and stop missing the return, refund, and warranty
-      deadlines that cost you money.
-    </p>
-  </div>
+    document.querySelectorAll(".reveal").forEach((item) => {
+      revealObserver.observe(item);
+    });
 
-  <div class="final-cta-buttons fade-up visible delay-1">
-    <a
-      href="https://apps.apple.com/app/retryn"
-      class="appstore-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="icon.png"
-        alt="Retryn"
-      />
-      <div class="appstore-btn-inner">
-        <span class="appstore-small">Download on the</span>
-        <span class="appstore-big">App Store</span>
-      </div>
-    </a>
+    document.querySelectorAll(".faq-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        const open = item.classList.contains("open");
 
-    <a
-      href="#pricing"
-      class="btn-ghost"
-    >
-      View plans
-    </a>
-  </div>
-</div>
-</section> <footer> <div class="container"> <div class="footer-inner"> <div class="footer-brand"> <img src="icon.png" alt="Retryn" /> <span class="footer-brand-name">Retryn</span> </div>
-    <div class="footer-links">
-      <a href="#features">Features</a>
-      <a href="#how">How It Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="/privacy.html">Privacy</a>
-    </div>
-  </div>
+        document.querySelectorAll(".faq-item").forEach((faq) => {
+          faq.classList.remove("open");
+        });
 
-  <div class="footer-copy">
-    ©
-    <span id="year"></span>
-    Retryn. All rights reserved.
-  </div>
-</div>
-</footer> <script> document.getElementById("year").textContent = new Date().getFullYear(); const observer = new IntersectionObserver( (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); } }); }, { threshold: 0.15 } ); document.querySelectorAll(".fade-up").forEach((el) => { observer.observe(el); }); document.querySelectorAll(".faq-q").forEach((button) => { button.addEventListener("click", () => { const item = button.parentElement; const isOpen = item.classList.contains("open"); document.querySelectorAll(".faq-item").forEach((faq) => { faq.classList.remove("open"); }); if (!isOpen) { item.classList.add("open"); } }); }); </script> </body> </html>
+        if (!open) {
+          item.classList.add("open");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
