@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Terms of Use | Retryn</title>
+  <meta
+    name="description"
+    content="Terms of Use for Retryn by Joshua Sean Johnson."
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #090b10;
+      --bg-soft: #11141b;
+      --bg-card: #171b24;
+      --bg-card-2: #1d2230;
+      --stroke: rgba(255, 255, 255, 0.08);
+      --stroke-strong: rgba(255, 255, 255, 0.14);
+      --text: #f7f7f8;
+      --text-soft: #b7bcc9;
+      --text-dim: #7c8293;
+      --mint: #83cfaa;
+      --mint-deep: #67b78e;
+      --blue: #81a9d4;
+      --blue-deep: #6282ac;
+      --gold: #f0c24f;
+      --red: #ef746d;
+      --purple: #8e62f6;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.35);
+      --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --max-width: 1120px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(131, 207, 170, 0.08), transparent 26%),
+        radial-gradient(circle at 88% 0%, rgba(129, 169, 212, 0.08), transparent 24%),
+        linear-gradient(180deg, #0a0c11 0%, #090b10 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--mint);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #9be0bc;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mint);
+      background: rgba(131, 207, 170, 0.1);
+      border: 1px solid rgba(131, 207, 170, 0.16);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 6px rgba(131, 207, 170, 0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(9, 11, 16, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-wrap {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .brand span {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-button,
+    .nav-button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .nav-button {
+      color: #0c1117;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      box-shadow: 0 14px 30px rgba(131, 207, 170, 0.16);
+    }
+
+    .nav-button-secondary {
+      color: var(--text);
+      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .nav-button:hover,
+    .nav-button-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .page {
+      padding: 40px 0 80px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(131, 207, 170, 0.14);
+      background:
+        radial-gradient(circle at 18% 16%, rgba(131, 207, 170, 0.14), transparent 26%),
+        radial-gradient(circle at 84% 0%, rgba(129, 169, 212, 0.14), transparent 24%),
+        linear-gradient(135deg, rgba(18, 23, 32, 0.96), rgba(10, 12, 18, 0.96));
+      box-shadow: var(--shadow-soft);
+      padding: 34px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.01)
+      );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero-brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-brand span {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--text);
+      line-height: 1.2;
+      scroll-margin-top: 110px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin: 28px 0 10px;
+    }
+
+    p,
+    li,
+    td,
+    th {
+      font-size: 16px;
+      color: var(--text-soft);
+    }
+
+    strong {
+      color: var(--text);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      max-width: 880px;
+    }
+
+    .hero-callout {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(131, 207, 170, 0.16);
+      background: rgba(131, 207, 170, 0.08);
+      color: var(--text-soft);
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .panel {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(19, 23, 33, 0.94), rgba(27, 30, 39, 0.92));
+      box-shadow: var(--shadow-card);
+      padding: 24px;
+    }
+
+    .panel h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .panel p {
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    .panel ul,
+    .panel ol {
+      padding-left: 20px;
+    }
+
+    .panel li + li {
+      margin-top: 8px;
+    }
+
+    .terms-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .terms-section {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 25, 34, 0.92), rgba(15, 18, 25, 0.9));
+      box-shadow: var(--shadow-card);
+      padding: 28px;
+    }
+
+    .terms-section p + p {
+      margin-top: 14px;
+    }
+
+    .terms-section ul,
+    .terms-section ol {
+      padding-left: 22px;
+      margin-top: 12px;
+    }
+
+    .terms-section li + li {
+      margin-top: 8px;
+    }
+
+    .subtle-callout {
+      margin: 18px 0 22px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--blue);
+      border-radius: 12px;
+      background: rgba(129, 169, 212, 0.1);
+      color: var(--text-soft);
+    }
+
+    .address {
+      font-style: normal;
+      white-space: pre-line;
+      color: var(--text-soft);
+      margin-top: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-note {
+      padding: 22px 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 25, 33, 0.92), rgba(13, 16, 22, 0.9));
+      color: var(--text-dim);
+      font-size: 14px;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (max-width: 900px) {
+      .top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+      .nav-wrap {
+        min-height: 74px;
+      }
+
+      .brand span {
+        font-size: 18px;
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .page {
+        padding: 24px 0 56px;
+      }
+
+      .hero-card,
+      .panel,
+      .terms-section,
+      .footer-note {
+        padding: 22px;
+      }
+
+      .hero-brand span {
+        font-size: 18px;
+      }
+
+      .hero-callout {
+        padding: 16px 16px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p,
+      li,
+      td,
+      th {
+        font-size: 15px;
+      }
+
+      .hero-lead {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <a
+        href="/"
+        class="brand"
+        aria-label="Retryn home"
+      >
+        <img
+          src="icon.png"
+          alt="Retryn"
+        />
+        <span>Retryn</span>
+      </a>
+
+      <div class="nav-actions">
+        <a
+          href="/"
+          class="nav-button-secondary"
+        >
+          Back to Home
+        </a>
+
+        <a
+          href="https://apps.apple.com/app/retryn"
+          class="nav-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download App
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <header class="hero-card">
+        <div class="hero-inner">
+          <div class="hero-brand">
+            <img
+              src="icon.png"
+              alt="Retryn"
+            />
+            <span>Retryn</span>
+          </div>
+
+          <span class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Legal
+          </span>
+
+          <h1>
+            Terms of <span class="gradient-text">Use</span>
+          </h1>
+
+          <div class="hero-meta">
+            <span><strong>Last updated:</strong> April 24, 2026</span>
+            <span><strong>Business:</strong> Joshua Sean Johnson</span>
+            <span><strong>App:</strong> Retryn</span>
+          </div>
+
+          <p class="hero-lead">
+            These Legal Terms are a legally binding agreement between you and
+            <strong>Joshua Sean Johnson</strong>, doing business as <strong>Retryn</strong>,
+            concerning your access to and use of the Retryn mobile application and any related services.
+          </p>
+
+          <p class="hero-lead">
+            Retryn is a mobile application that helps users track purchase return deadlines,
+            store receipts and warranties, and manage refund claims in one place.
+          </p>
+
+          <div class="hero-callout">
+            <strong>Contact:</strong>
+            <a href="tel:9194106041">919-410-6041</a>,
+            <a href="mailto:support@retryn.app">support@retryn.app</a>,
+            or 631 Brawley School Rd, Ste 300 #1139, Mooresville, NC 28117, United States.
+          </div>
+        </div>
+      </header>
+
+      <section class="top-grid">
+        <div class="panel">
+          <h2>Agreement to Our Legal Terms</h2>
+          <p>
+            We are Joshua Sean Johnson, doing business as Retryn, a company registered in North Carolina, United States,
+            at 631 Brawley School Rd, Ste 300 #1139, Mooresville, NC 28117.
+          </p>
+          <p>
+            We operate the mobile application Retryn and any related products and services that refer or link to these Legal Terms.
+          </p>
+          <p>
+            By accessing the Services, you confirm that you have read, understood, and agreed to be bound by these Legal Terms.
+            If you do not agree, you must discontinue use immediately.
+          </p>
+          <p>
+            We will provide prior notice of scheduled changes to the Services you are using. Modified Legal Terms become effective when posted
+            or when you are notified by email. Continued use after the effective date means you accept the updated terms.
+          </p>
+          <p>
+            The Services are intended for users who are at least 18 years old.
+            Persons under the age of 18 are not permitted to use or register for the Services.
+          </p>
+          <p>
+            We recommend that you print a copy of these Legal Terms for your records.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2>Table of Contents</h2>
+          <ol>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#ip">Intellectual Property Rights</a></li>
+            <li><a href="#userreps">User Representations</a></li>
+            <li><a href="#userreg">User Registration</a></li>
+            <li><a href="#purchases">Purchases and Payment</a></li>
+            <li><a href="#subscriptions">Subscriptions</a></li>
+            <li><a href="#prohibited">Prohibited Activities</a></li>
+            <li><a href="#ugc">User Generated Contributions</a></li>
+            <li><a href="#license">Contribution License</a></li>
+            <li><a href="#mobile">Mobile Application License</a></li>
+            <li><a href="#thirdparty">Third-Party Websites and Content</a></li>
+            <li><a href="#sitemanage">Services Management</a></li>
+            <li><a href="#ppyes">Privacy Policy</a></li>
+            <li><a href="#copyrightyes">Copyright Infringements</a></li>
+            <li><a href="#terms">Term and Termination</a></li>
+            <li><a href="#modifications">Modifications and Interruptions</a></li>
+            <li><a href="#law">Governing Law</a></li>
+            <li><a href="#disputes">Dispute Resolution</a></li>
+            <li><a href="#corrections">Corrections</a></li>
+            <li><a href="#disclaimer">Disclaimer</a></li>
+            <li><a href="#liability">Limitations of Liability</a></li>
+            <li><a href="#indemnification">Indemnification</a></li>
+            <li><a href="#userdata">User Data</a></li>
+            <li><a href="#electronic">Electronic Communications, Transactions, and Signatures</a></li>
+            <li><a href="#california">California Users and Residents</a></li>
+            <li><a href="#misc">Miscellaneous</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="terms-sections">
+        <article
+          class="terms-section"
+          id="services"
+        >
+          <h2>1. Our Services</h2>
+          <p>
+            The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction
+            or country where such distribution or use would be contrary to law or regulation or would subject us to any registration requirement
+            within that jurisdiction or country. Those who choose to access the Services from other locations do so on their own initiative
+            and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
+          </p>
+          <p>
+            The Services are not tailored to comply with industry-specific regulations, including HIPAA and FISMA.
+            If your interactions would be subject to such laws, you may not use the Services.
+            You may not use the Services in a way that would violate the Gramm-Leach-Bliley Act (GLBA).
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="ip"
+        >
+          <h2>2. Intellectual Property Rights</h2>
+
+          <h3>Our intellectual property</h3>
+          <p>
+            We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases,
+            functionality, software, website designs, audio, video, text, photographs, and graphics in the Services, as well as the trademarks,
+            service marks, and logos contained therein.
+          </p>
+          <p>
+            Our Content and Marks are protected by copyright and trademark laws and other intellectual property and unfair competition laws
+            in the United States and around the world.
+          </p>
+          <p>
+            The Content and Marks are provided in or through the Services on an “AS IS” basis for your personal, non-commercial use only.
+          </p>
+
+          <h3>Your use of our Services</h3>
+          <p>
+            Subject to your compliance with these Legal Terms, including the
+            <a href="#prohibited">Prohibited Activities</a>
+            section, we grant you a non-exclusive, non-transferable, revocable license to:
+          </p>
+          <ul>
+            <li>Access the Services</li>
+            <li>Download or print a copy of any portion of the Content to which you have properly gained access, solely for your personal, non-commercial use</li>
+          </ul>
+          <p>
+            Except as expressly stated in these Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated,
+            republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited
+            for any commercial purpose without our express prior written permission.
+          </p>
+          <p>
+            If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in these Legal Terms,
+            please address your request to
+            <a href="mailto:support@retryn.app">support@retryn.app</a>.
+          </p>
+          <p>
+            We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.
+            Any breach of these Intellectual Property Rights will constitute a material breach of these Legal Terms and your right to use our Services
+            will terminate immediately.
+          </p>
+
+          <h3>Your submissions and contributions</h3>
+          <p>
+            Please review this section and the
+            <a href="#prohibited">Prohibited Activities</a>
+            section carefully before using our Services to understand the rights you give us and the obligations you have when you post or upload
+            any content through the Services.
+          </p>
+          <p>
+            <strong>Submissions:</strong>
+            By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services,
+            you agree to assign to us all intellectual property rights in that Submission.
+            You agree that we shall own the Submission and be entitled to its unrestricted use and dissemination for any lawful purpose,
+            commercial or otherwise, without acknowledgment or compensation to you.
+          </p>
+          <p>
+            <strong>Contributions:</strong>
+            The Services may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality
+            during which you may create, submit, post, display, transmit, publish, distribute, or broadcast content and materials to us or through
+            the Services, including text, writings, video, audio, photographs, music, graphics, comments, reviews, rating suggestions,
+            personal information, or other material. Any Submission that is publicly posted shall also be treated as a Contribution.
+          </p>
+          <p>
+            You understand that Contributions may be viewable by other users of the Services and possibly through third-party websites.
+          </p>
+          <p>
+            <strong>When you post Contributions, you grant us a license:</strong>
+            By posting any Contributions, you grant us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable,
+            royalty-free, fully-paid, worldwide right and license to use, copy, reproduce, distribute, sell, resell, publish, broadcast,
+            retitle, store, publicly perform, publicly display, reformat, translate, excerpt, and exploit your Contributions for any purpose,
+            commercial, advertising, or otherwise, and to prepare derivative works of, or incorporate into other works, your Contributions,
+            and to sublicense the licenses granted in this section.
+          </p>
+          <p>
+            This license includes our use of your name, company name, franchise name, trademarks, service marks, trade names, logos,
+            and personal and commercial images you provide.
+          </p>
+          <p>
+            <strong>You are responsible for what you post or upload.</strong>
+            By sending us Submissions and posting Contributions through any part of the Services, you:
+          </p>
+          <ul>
+            <li>Confirm that you have read and agree with our <a href="#prohibited">Prohibited Activities</a> section</li>
+            <li>Agree not to post, send, publish, upload, or transmit anything illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening, sexually explicit, false, inaccurate, deceitful, or misleading</li>
+            <li>Waive any and all moral rights to such Submission or Contribution to the extent permissible by law</li>
+            <li>Warrant that any Submission or Contribution is original to you or that you have the necessary rights and licenses to submit it</li>
+            <li>Warrant that your Submissions and Contributions do not constitute confidential information</li>
+          </ul>
+          <p>
+            You are solely responsible for your Submissions and Contributions and you expressly agree to reimburse us for any losses we may suffer
+            because of your breach of this section, any third party’s intellectual property rights, or applicable law.
+          </p>
+          <p>
+            <strong>We may remove or edit your Content:</strong>
+            Although we have no obligation to monitor Contributions, we shall have the right to remove or edit any Contributions at any time
+            without notice if, in our reasonable opinion, we consider them harmful or in breach of these Legal Terms.
+            If we remove or edit Contributions, we may also suspend or disable your account and report you to the authorities.
+          </p>
+
+          <h3>Copyright infringement</h3>
+          <p>
+            We respect the intellectual property rights of others. If you believe that any material available on or through the Services infringes
+            a copyright you own or control, please immediately refer to the
+            <a href="#copyrightyes">Copyright Infringements</a>
+            section below.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="userreps"
+        >
+          <h2>3. User Representations</h2>
+          <p>
+            By using the Services, you represent and warrant that:
+          </p>
+          <ul>
+            <li>All registration information you submit will be true, accurate, current, and complete</li>
+            <li>You will maintain the accuracy of such information and promptly update it as necessary</li>
+            <li>You have the legal capacity and you agree to comply with these Legal Terms</li>
+            <li>You are not a minor in the jurisdiction in which you reside</li>
+            <li>You will not access the Services through automated or non-human means, whether through a bot, script, or otherwise</li>
+            <li>You will not use the Services for any illegal or unauthorized purpose</li>
+            <li>Your use of the Services will not violate any applicable law or regulation</li>
+          </ul>
+          <p>
+            If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate
+            your account and refuse any and all current or future use of the Services or any portion thereof.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="userreg"
+        >
+          <h2>4. User Registration</h2>
+          <p>
+            You may be required to register to use the Services. You agree to keep your password confidential and will be responsible for all use
+            of your account and password. We reserve the right to remove, reclaim, or change a username you select if we determine, in our sole discretion,
+            that the username is inappropriate, obscene, or otherwise objectionable.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="purchases"
+        >
+          <h2>5. Purchases and Payment</h2>
+          <p>We accept the following forms of payment:</p>
+          <ul>
+            <li>Apple App Store</li>
+          </ul>
+          <p>
+            You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Services.
+            You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date,
+            so that we can complete your transactions and contact you as needed.
+            Sales tax will be added to the price of purchases as deemed required by us.
+            We may change prices at any time. All payments shall be in US dollars.
+          </p>
+          <p>
+            You agree to pay all charges at the prices then in effect for your purchases and any applicable fees, and you authorize us to charge
+            your chosen payment provider for those amounts upon placing your order.
+            We reserve the right to correct any errors or mistakes in pricing, even if we have already requested or received payment.
+          </p>
+          <p>
+            We reserve the right to refuse any order placed through the Services. We may, in our sole discretion, limit or cancel quantities purchased
+            per person, per household, or per order. These restrictions may include orders placed by or under the same customer account, the same payment method,
+            and or orders that use the same billing or shipping address.
+            We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers, or distributors.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="subscriptions"
+        >
+          <h2>6. Subscriptions</h2>
+
+          <h3>Billing and Renewal</h3>
+          <p>
+            Your subscription will continue and automatically renew unless canceled.
+            You consent to our charging your payment method on a recurring basis without requiring your prior approval for each recurring charge,
+            until you cancel the applicable subscription.
+            The length of your billing cycle will depend on the type of subscription plan you choose when you subscribe to the Services.
+          </p>
+
+          <h3>Cancellation</h3>
+          <p>
+            Users can cancel their subscription at any time through their iPhone Settings, Apple ID, and Subscriptions.
+            Your cancellation will take effect at the end of the current paid term.
+            If you have any questions or are unsatisfied with our Services, please email us at
+            <a href="mailto:support@retryn.app">support@retryn.app</a>.
+          </p>
+
+          <h3>Fee Changes</h3>
+          <p>
+            We may, from time to time, make changes to the subscription fee and will communicate any price changes to you in accordance with applicable law.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="prohibited"
+        >
+          <h2>7. Prohibited Activities</h2>
+          <p>
+            You may not access or use the Services for any purpose other than that for which we make the Services available.
+            The Services may not be used in connection with any commercial endeavors except those specifically endorsed or approved by us.
+          </p>
+          <p>As a user of the Services, you agree not to:</p>
+          <ul>
+            <li>Systematically retrieve data or other content from the Services to create or compile a collection, compilation, database, or directory without written permission from us</li>
+            <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as passwords</li>
+            <li>Circumvent, disable, or otherwise interfere with security-related features of the Services</li>
+            <li>Disparage, tarnish, or otherwise harm, in our opinion, us and or the Services</li>
+            <li>Use any information obtained from the Services in order to harass, abuse, or harm another person</li>
+            <li>Make improper use of our support services or submit false reports of abuse or misconduct</li>
+            <li>Use the Services in a manner inconsistent with any applicable laws or regulations</li>
+            <li>Engage in unauthorized framing of or linking to the Services</li>
+            <li>Upload or transmit viruses, Trojan horses, or other material that interferes with the use or operation of the Services</li>
+            <li>Engage in any automated use of the system, including scripts, robots, data mining, or similar tools</li>
+            <li>Delete copyright or other proprietary rights notices from any Content</li>
+            <li>Attempt to impersonate another user or person or use the username of another user</li>
+            <li>Upload or transmit material that acts as a passive or active information collection mechanism, including spyware or passive collection mechanisms</li>
+            <li>Interfere with, disrupt, or create an undue burden on the Services or the networks or services connected to the Services</li>
+            <li>Harass, annoy, intimidate, or threaten any of our employees or agents</li>
+            <li>Attempt to bypass any measures designed to prevent or restrict access to the Services</li>
+            <li>Copy or adapt the Services’ software, including HTML, JavaScript, or other code</li>
+            <li>Decipher, decompile, disassemble, or reverse engineer any of the software comprising any part of the Services, except as permitted by law</li>
+            <li>Use, launch, develop, or distribute any spider, robot, scraper, cheat utility, offline reader, unauthorized script, or similar software</li>
+            <li>Use a buying agent or purchasing agent to make purchases on the Services</li>
+            <li>Collect usernames or email addresses for sending unsolicited email or create user accounts by automated means or under false pretenses</li>
+            <li>Use the Services as part of any effort to compete with us or otherwise use the Services and or the Content for any revenue-generating endeavor or commercial enterprise</li>
+            <li>Use the Services to advertise or offer to sell goods and services</li>
+            <li>Sell or otherwise transfer your profile</li>
+            <li>Use the app to submit fraudulent return or warranty claims</li>
+            <li>Attempt to manipulate return deadlines or falsify purchase data</li>
+          </ul>
+        </article>
+
+        <article
+          class="terms-section"
+          id="ugc"
+        >
+          <h2>8. User Generated Contributions</h2>
+          <p>
+            The Services may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality,
+            and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content
+            and materials to us or on the Services, including text, writings, video, audio, photographs, graphics, comments, suggestions,
+            personal information, or other material.
+          </p>
+          <p>
+            Contributions may be viewable by other users of the Services and through third-party websites.
+            As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
+            When you create or make available any Contributions, you represent and warrant that:
+          </p>
+          <ul>
+            <li>The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not infringe any proprietary rights of any third party</li>
+            <li>You are the creator and owner of your Contributions or have the necessary licenses, rights, consents, releases, and permissions to use them</li>
+            <li>You have the written consent, release, and or permission of every identifiable individual person in your Contributions</li>
+            <li>Your Contributions are not false, inaccurate, or misleading</li>
+            <li>Your Contributions are not unsolicited or unauthorized advertising, pyramid schemes, chain letters, spam, mass mailings, or other forms of solicitation</li>
+            <li>Your Contributions are not obscene, lewd, violent, harassing, libelous, slanderous, or otherwise objectionable</li>
+            <li>Your Contributions do not ridicule, mock, disparage, intimidate, or abuse anyone</li>
+            <li>Your Contributions are not used to harass or threaten any person or promote violence against any person or class of people</li>
+            <li>Your Contributions do not violate any applicable law, regulation, or rule</li>
+            <li>Your Contributions do not violate the privacy or publicity rights of any third party</li>
+            <li>Your Contributions do not violate laws concerning child pornography or intended to protect minors</li>
+            <li>Your Contributions do not include offensive comments connected to race, national origin, gender, sexual preference, or physical handicap</li>
+            <li>Your Contributions do not otherwise violate these Legal Terms or link to material that does</li>
+          </ul>
+          <p>
+            Any use of the Services in violation of the foregoing violates these Legal Terms and may result in termination or suspension of your rights
+            to use the Services.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="license"
+        >
+          <h2>9. Contribution License</h2>
+          <p>
+            By posting your Contributions to any part of the Services, you automatically grant, and you represent and warrant that you have the right to grant,
+            to us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right and license
+            to host, use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display,
+            reformat, translate, transmit, excerpt, and distribute such Contributions for any purpose, commercial, advertising, or otherwise,
+            and to prepare derivative works of, or incorporate into other works, such Contributions, and authorize sublicenses of the foregoing.
+          </p>
+          <p>
+            This license will apply to any form, media, or technology now known or later developed, and includes our use of your name, company name,
+            franchise name, trademarks, service marks, trade names, logos, and personal and commercial images you provide.
+            You waive all moral rights in your Contributions, and you warrant that moral rights have not otherwise been asserted in your Contributions.
+          </p>
+          <p>
+            We do not assert any ownership over your Contributions. You retain full ownership of all of your Contributions and any intellectual property rights
+            associated with them. We are not liable for any statements or representations in your Contributions. You are solely responsible for your Contributions
+            and you expressly agree to exonerate us from any responsibility and to refrain from any legal action against us regarding your Contributions.
+          </p>
+          <p>
+            We have the right, in our sole and absolute discretion, to edit, redact, or otherwise change any Contributions,
+            recategorize any Contributions, and pre-screen or delete any Contributions at any time and for any reason, without notice.
+            We have no obligation to monitor your Contributions.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="mobile"
+        >
+          <h2>10. Mobile Application License</h2>
+
+          <h3>Use License</h3>
+          <p>
+            If you access the Services via the App, then we grant you a revocable, non-exclusive, non-transferable, limited right to install
+            and use the App on wireless electronic devices owned or controlled by you, and to access and use the App on such devices strictly
+            in accordance with these Legal Terms.
+          </p>
+          <p>
+            You shall not:
+          </p>
+          <ul>
+            <li>Decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the App, except as permitted by law</li>
+            <li>Make any modification, adaptation, improvement, enhancement, translation, or derivative work from the App</li>
+            <li>Violate any applicable laws, rules, or regulations in connection with your access or use of the App</li>
+            <li>Remove, alter, or obscure any proprietary notice posted by us or the licensors of the App</li>
+            <li>Use the App for any revenue-generating endeavor, commercial enterprise, or other purpose for which it is not designed or intended</li>
+            <li>Make the App available over a network or environment permitting access or use by multiple devices or users at the same time</li>
+            <li>Use the App for creating a product, service, or software that is competitive with or a substitute for the App</li>
+            <li>Use the App to send automated queries to any website or unsolicited commercial email</li>
+            <li>Use any proprietary information or our interfaces or other intellectual property in the design, development, manufacture, licensing, or distribution of any applications, accessories, or devices for use with the App</li>
+          </ul>
+
+          <h3>Apple and Android Devices</h3>
+          <p>
+            The following terms apply when you use the App obtained from either the Apple Store or Google Play, each an App Distributor:
+          </p>
+          <ul>
+            <li>The license granted to you is limited to a non-transferable license to use the application on a device that uses the applicable operating system and in accordance with the App Distributor’s usage rules</li>
+            <li>We are responsible for providing maintenance and support services with respect to the App as required under applicable law or these Legal Terms</li>
+            <li>If the App fails to conform to any applicable warranty, you may notify the App Distributor, and the App Distributor may refund the purchase price, if any, paid for the App</li>
+            <li>You represent and warrant that you are not located in a country subject to a US government embargo or designated as a terrorist supporting country and are not listed on any US government list of prohibited or restricted parties</li>
+            <li>You must comply with applicable third-party terms of agreement when using the App</li>
+            <li>You acknowledge and agree that the App Distributors are third-party beneficiaries of these mobile application license terms and may enforce them against you</li>
+          </ul>
+        </article>
+
+        <article
+          class="terms-section"
+          id="thirdparty"
+        >
+          <h2>11. Third-Party Websites and Content</h2>
+          <p>
+            The Services may contain links to other websites and content belonging to or originating from third parties.
+            Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness,
+            or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Services or any Third-Party Content
+            posted on, available through, or installed from the Services.
+          </p>
+          <p>
+            Inclusion of, linking to, or permitting the use or installation of any Third-Party Websites or Third-Party Content does not imply
+            approval or endorsement by us. If you decide to leave the Services and access Third-Party Websites or use or install Third-Party Content,
+            you do so at your own risk, and these Legal Terms no longer govern.
+          </p>
+          <p>
+            Any purchases you make through Third-Party Websites will be through other websites and from other companies,
+            and we take no responsibility in relation to such purchases.
+            You agree and acknowledge that we do not endorse products or services offered on Third-Party Websites and you shall hold us blameless
+            from any harm caused by your purchase of such products or services.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="sitemanage"
+        >
+          <h2>12. Services Management</h2>
+          <p>
+            We reserve the right, but not the obligation, to:
+          </p>
+          <ul>
+            <li>Monitor the Services for violations of these Legal Terms</li>
+            <li>Take appropriate legal action against anyone who violates the law or these Legal Terms</li>
+            <li>Refuse, restrict access to, limit the availability of, or disable any of your Contributions or any portion thereof</li>
+            <li>Remove from the Services or otherwise disable all files and content that are excessive in size or burdensome to our systems</li>
+            <li>Otherwise manage the Services in a manner designed to protect our rights and property and to facilitate proper functioning of the Services</li>
+          </ul>
+        </article>
+
+        <article
+          class="terms-section"
+          id="ppyes"
+        >
+          <h2>13. Privacy Policy</h2>
+          <p>
+            We care about data privacy and security. Please review our Privacy Policy:
+            <a
+              href="https://retryn.app/privacy.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://retryn.app/privacy.html
+            </a>.
+            By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms.
+          </p>
+          <p>
+            Please be advised the Services are hosted in the United States. If you access the Services from any other region of the world
+            with laws or requirements governing personal data collection, use, or disclosure that differ from applicable laws in the United States,
+            then through your continued use of the Services, you are transferring your data to the United States, and you expressly consent
+            to have your data transferred to and processed in the United States.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="copyrightyes"
+        >
+          <h2>14. Copyright Infringements</h2>
+          <p>
+            We respect the intellectual property rights of others. If you believe that any material available on or through the Services infringes
+            upon any copyright you own or control, please immediately notify us using the contact information provided below.
+            A copy of your notification may be sent to the person who posted or stored the material addressed in the notification.
+            Please be advised that you may be held liable for damages if you make material misrepresentations in a notification.
+            If you are not sure that material located on or linked to by the Services infringes your copyright, you should consider first contacting an attorney.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="terms"
+        >
+          <h2>15. Term and Termination</h2>
+          <p>
+            These Legal Terms shall remain in full force and effect while you use the Services.
+            Without limiting any other provision of these Legal Terms, we reserve the right to, in our sole discretion and without notice or liability,
+            deny access to and use of the Services, including blocking certain IP addresses, to any person for any reason or for no reason,
+            including for breach of any representation, warranty, or covenant contained in these Legal Terms or of any applicable law or regulation.
+            We may terminate your use or participation in the Services or delete your account and any content or information that you posted at any time,
+            without warning, in our sole discretion.
+          </p>
+          <p>
+            If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name,
+            a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party.
+            In addition to terminating or suspending your account, we reserve the right to take appropriate legal action,
+            including civil, criminal, and injunctive redress.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="modifications"
+        >
+          <h2>16. Modifications and Interruptions</h2>
+          <p>
+            We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice.
+            However, we have no obligation to update any information on our Services.
+            We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Services.
+          </p>
+          <p>
+            We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance,
+            which may result in interruptions, delays, or errors.
+            We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Services at any time or for any reason without notice.
+            You agree that we have no liability for any loss, damage, or inconvenience caused by your inability to access or use the Services during downtime
+            or discontinuance.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="law"
+        >
+          <h2>17. Governing Law</h2>
+          <p>
+            These Legal Terms and your use of the Services are governed by and construed in accordance with the laws of the State of North Carolina,
+            applicable to agreements made and to be entirely performed within the State of North Carolina, without regard to its conflict of law principles.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="disputes"
+        >
+          <h2>18. Dispute Resolution</h2>
+
+          <h3>Informal Negotiations</h3>
+          <p>
+            To expedite resolution and control the cost of any dispute, controversy, or claim related to these Legal Terms,
+            the parties agree to first attempt to negotiate any dispute informally for at least thirty (30) days before initiating arbitration.
+            Such informal negotiations commence upon written notice from one party to the other party.
+          </p>
+
+          <h3>Binding Arbitration</h3>
+          <p>
+            If the parties are unable to resolve a dispute through informal negotiations, the dispute will be finally and exclusively resolved by binding arbitration.
+            You understand that without this provision, you would have the right to sue in court and have a jury trial.
+            The arbitration shall be commenced and conducted under the Commercial Arbitration Rules of the American Arbitration Association,
+            and where appropriate, the AAA’s Supplementary Procedures for Consumer Related Disputes, both available at
+            <a
+              href="http://www.adr.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              the AAA website
+            </a>.
+          </p>
+          <p>
+            Your arbitration fees and your share of arbitrator compensation shall be governed by the AAA Consumer Rules and,
+            where appropriate, limited by those rules. If such costs are determined by the arbitrator to be excessive, we will pay all arbitration fees and expenses.
+            The arbitration may be conducted in person, through the submission of documents, by phone, or online.
+            The arbitrator will make a decision in writing, but need not provide a statement of reasons unless requested by either party.
+            Except where otherwise required by applicable AAA rules or law, the arbitration will take place in Iredell, North Carolina.
+          </p>
+          <p>
+            If for any reason a dispute proceeds in court rather than arbitration, the dispute shall be commenced or prosecuted in the state and federal courts
+            located in Iredell, North Carolina, and the parties consent to and waive all defenses of lack of personal jurisdiction and forum non conveniens
+            with respect to venue and jurisdiction in such courts.
+          </p>
+          <p>
+            In no event shall any dispute related in any way to the Services be commenced more than one (1) year after the cause of action arose.
+          </p>
+
+          <h3>Restrictions</h3>
+          <p>
+            The parties agree that any arbitration shall be limited to the dispute between the parties individually.
+            To the fullest extent permitted by law:
+          </p>
+          <ul>
+            <li>No arbitration shall be joined with any other proceeding</li>
+            <li>There is no right or authority for any dispute to be arbitrated on a class-action basis or to use class action procedures</li>
+            <li>There is no right or authority for any dispute to be brought in a purported representative capacity on behalf of the general public or any other persons</li>
+          </ul>
+
+          <h3>Exceptions to Informal Negotiations and Arbitration</h3>
+          <p>
+            The parties agree that the following disputes are not subject to the above provisions:
+          </p>
+          <ul>
+            <li>Disputes seeking to enforce or protect intellectual property rights</li>
+            <li>Disputes related to allegations of theft, piracy, invasion of privacy, or unauthorized use</li>
+            <li>Claims for injunctive relief</li>
+          </ul>
+        </article>
+
+        <article
+          class="terms-section"
+          id="corrections"
+        >
+          <h2>19. Corrections</h2>
+          <p>
+            There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions,
+            pricing, availability, and other information.
+            We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time,
+            without prior notice.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="disclaimer"
+        >
+          <h2>20. Disclaimer</h2>
+          <div class="subtle-callout">
+            The Services are provided on an “AS IS” and “AS AVAILABLE” basis. Your use of the Services is at your sole risk.
+          </div>
+          <p>
+            To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the Services and your use thereof,
+            including the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+            We make no warranties or representations about the accuracy or completeness of the Services’ content or the content of any linked websites
+            or mobile applications and we will assume no liability or responsibility for:
+          </p>
+          <ul>
+            <li>Errors, mistakes, or inaccuracies of content and materials</li>
+            <li>Personal injury or property damage resulting from your access to and use of the Services</li>
+            <li>Any unauthorized access to or use of our secure servers and any personal or financial information stored therein</li>
+            <li>Any interruption or cessation of transmission to or from the Services</li>
+            <li>Any bugs, viruses, Trojan horses, or the like that may be transmitted through the Services by any third party</li>
+            <li>Any errors or omissions in content and materials or any loss or damage incurred as a result of use of any content posted or otherwise made available via the Services</li>
+          </ul>
+          <p>
+            We do not warrant, endorse, guarantee, or assume responsibility for any product or service advertised or offered by a third party
+            through the Services or any linked website or mobile application.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="liability"
+        >
+          <h2>21. Limitations of Liability</h2>
+          <p>
+            In no event will we or our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential,
+            exemplary, incidental, special, or punitive damages, including lost profit, lost revenue, loss of data, or other damages arising from your use
+            of the Services, even if we have been advised of the possibility of such damages.
+          </p>
+          <p>
+            Notwithstanding anything to the contrary contained herein, our liability to you for any cause whatsoever and regardless of the form of the action
+            will at all times be limited to the amount paid, if any, by you to us during the three (3) month period prior to any cause of action arising.
+            Certain US state laws and international laws do not allow limitations on implied warranties or the exclusion or limitation of certain damages.
+            If those laws apply to you, some or all of the above disclaimers or limitations may not apply to you, and you may have additional rights.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="indemnification"
+        >
+          <h2>22. Indemnification</h2>
+          <p>
+            You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents,
+            partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses,
+            made by any third party due to or arising out of:
+          </p>
+          <ul>
+            <li>Your Contributions</li>
+            <li>Your use of the Services</li>
+            <li>Your breach of these Legal Terms</li>
+            <li>Your breach of your representations and warranties set forth in these Legal Terms</li>
+            <li>Your violation of the rights of a third party, including intellectual property rights</li>
+            <li>Any overt harmful act toward any other user of the Services with whom you connected via the Services</li>
+          </ul>
+          <p>
+            We reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us,
+            and you agree to cooperate, at your expense, with our defense of such claims.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="userdata"
+        >
+          <h2>23. User Data</h2>
+          <p>
+            We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services,
+            as well as data relating to your use of the Services.
+            Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity
+            you have undertaken using the Services.
+            You agree that we shall have no liability to you for any loss or corruption of any such data, and you waive any right of action against us
+            arising from any such loss or corruption.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="electronic"
+        >
+          <h2>24. Electronic Communications, Transactions, and Signatures</h2>
+          <p>
+            Visiting the Services, sending us emails, and completing online forms constitute electronic communications.
+            You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications
+            we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing.
+          </p>
+          <p>
+            You hereby agree to the use of electronic signatures, contracts, orders, and other records,
+            and to electronic delivery of notices, policies, and records of transactions initiated or completed by us or via the Services.
+            You waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction
+            that require an original signature or delivery or retention of non-electronic records.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="california"
+        >
+          <h2>25. California Users and Residents</h2>
+          <p>
+            If any complaint with us is not satisfactorily resolved, you can contact the Complaint Assistance Unit of the Division of Consumer Services
+            of the California Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N 112, Sacramento, California 95834
+            or by telephone at (800) 952-5210 or (916) 445-1254.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="misc"
+        >
+          <h2>26. Miscellaneous</h2>
+          <p>
+            These Legal Terms and any policies or operating rules posted by us on the Services constitute the entire agreement and understanding
+            between you and us.
+            Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision.
+            These Legal Terms operate to the fullest extent permissible by law.
+            We may assign any or all of our rights and obligations to others at any time.
+            We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control.
+          </p>
+          <p>
+            If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable,
+            that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability
+            of any remaining provisions.
+            There is no joint venture, partnership, employment, or agency relationship created between you and us as a result of these Legal Terms
+            or use of the Services.
+            You agree that these Legal Terms will not be construed against us by virtue of having drafted them.
+            You waive any and all defenses you may have based on the electronic form of these Legal Terms and the lack of signing by the parties
+            to execute these Legal Terms.
+          </p>
+        </article>
+
+        <article
+          class="terms-section"
+          id="contact"
+        >
+          <h2>27. Contact Us</h2>
+          <p>
+            In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services,
+            please contact us at:
+          </p>
+
+          <address class="address">
+Joshua Sean Johnson
+631 Brawley School Rd
+Ste 300 #1139
+Mooresville, NC 28117
+United States
+
+Phone: 919-410-6041
+Email: support@retryn.app
+          </address>
+        </article>
+
+        <div class="footer-note">
+          Retryn legal page.
+          For privacy terms, visit
+          <a
+            href="https://retryn.app/privacy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            retryn.app/privacy.html
+          </a>.
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
