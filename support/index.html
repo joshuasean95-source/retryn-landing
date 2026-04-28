@@ -1,0 +1,823 @@
+Paste this into `/support/index.html`. If your setup uses single files, use `/support.html` instead.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Support | Retryn</title>
+  <meta
+    name="description"
+    content="Get help with Retryn, account access, subscriptions, billing, bug reports, and app feedback."
+  />
+  <link
+    rel="icon"
+    href="/icon.png"
+    type="image/png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="/icon.png"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #090b10;
+      --bg-soft: #11141b;
+      --bg-card: #171b24;
+      --bg-card-2: #1d2230;
+      --stroke: rgba(255, 255, 255, 0.08);
+      --stroke-strong: rgba(255, 255, 255, 0.14);
+      --text: #f7f7f8;
+      --text-soft: #b7bcc9;
+      --text-dim: #7c8293;
+      --mint: #83cfaa;
+      --mint-deep: #67b78e;
+      --blue: #81a9d4;
+      --blue-deep: #6282ac;
+      --gold: #f0c24f;
+      --red: #ef746d;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.35);
+      --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --max-width: 1120px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(131, 207, 170, 0.08), transparent 26%),
+        radial-gradient(circle at 88% 0%, rgba(129, 169, 212, 0.08), transparent 24%),
+        linear-gradient(180deg, #0a0c11 0%, #090b10 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--mint);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #9be0bc;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mint);
+      background: rgba(131, 207, 170, 0.1);
+      border: 1px solid rgba(131, 207, 170, 0.16);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 6px rgba(131, 207, 170, 0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(9, 11, 16, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-wrap {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .brand span {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-button,
+    .nav-button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .nav-button {
+      color: #0c1117;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      box-shadow: 0 14px 30px rgba(131, 207, 170, 0.16);
+    }
+
+    .nav-button-secondary {
+      color: var(--text);
+      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .nav-button:hover,
+    .nav-button-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .page {
+      padding: 40px 0 80px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(131, 207, 170, 0.14);
+      background:
+        radial-gradient(circle at 18% 16%, rgba(131, 207, 170, 0.14), transparent 26%),
+        radial-gradient(circle at 84% 0%, rgba(129, 169, 212, 0.14), transparent 24%),
+        linear-gradient(135deg, rgba(18, 23, 32, 0.96), rgba(10, 12, 18, 0.96));
+      box-shadow: var(--shadow-soft);
+      padding: 34px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.01)
+      );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+    }
+
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero-brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-brand span {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li,
+    td,
+    th,
+    summary {
+      font-size: 16px;
+      color: var(--text-soft);
+    }
+
+    strong {
+      color: var(--text);
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-soft);
+      margin-top: 18px;
+      max-width: 860px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      color: #0c1117;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--blue) 100%);
+      box-shadow: 0 16px 34px rgba(131, 207, 170, 0.18);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--stroke);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(131, 207, 170, 0.16);
+      background: rgba(131, 207, 170, 0.08);
+      color: var(--text-soft);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(19, 23, 33, 0.94), rgba(27, 30, 39, 0.92));
+      box-shadow: var(--shadow-card);
+      padding: 24px;
+    }
+
+    .card p + p {
+      margin-top: 12px;
+    }
+
+    .card ul,
+    .card ol {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .card li + li {
+      margin-top: 8px;
+    }
+
+    .icon-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 20px;
+      background: rgba(131, 207, 170, 0.12);
+      border: 1px solid rgba(131, 207, 170, 0.18);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 16px;
+      font-weight: 800;
+      color: var(--mint);
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--mint);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    details {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 25, 34, 0.92), rgba(15, 18, 25, 0.9));
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-body {
+      padding: 0 22px 22px;
+      color: var(--text-soft);
+    }
+
+    .contact-block {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--stroke);
+    }
+
+    .contact-line + .contact-line {
+      margin-top: 10px;
+    }
+
+    .footer-note {
+      padding: 22px 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--stroke);
+      background:
+        linear-gradient(135deg, rgba(22, 25, 33, 0.92), rgba(13, 16, 22, 0.9));
+      color: var(--text-dim);
+      font-size: 14px;
+      box-shadow: var(--shadow-card);
+      margin-top: 24px;
+    }
+
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+      .nav-wrap {
+        min-height: 74px;
+      }
+
+      .brand span {
+        font-size: 18px;
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .page {
+        padding: 24px 0 56px;
+      }
+
+      .hero-card,
+      .card,
+      details,
+      .footer-note {
+        padding: 22px;
+      }
+
+      details summary {
+        padding: 18px 18px;
+      }
+
+      details .faq-body {
+        padding: 0 18px 18px;
+      }
+
+      .hero-brand span {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p,
+      li,
+      td,
+      th,
+      summary {
+        font-size: 15px;
+      }
+
+      .hero-lead {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <a
+        href="/"
+        class="brand"
+        aria-label="Retryn home"
+      >
+        <img
+          src="/icon.png"
+          alt="Retryn"
+          onerror="this.onerror=null;this.src='icon.png';"
+        />
+        <span>Retryn</span>
+      </a>
+
+      <div class="nav-actions">
+        <a
+          href="/"
+          class="nav-button-secondary"
+        >
+          Back to Home
+        </a>
+
+        <a
+          href="https://apps.apple.com/app/retryn"
+          class="nav-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download App
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <section class="hero-card">
+        <div class="hero-inner">
+          <div class="hero-brand">
+            <img
+              src="/icon.png"
+              alt="Retryn"
+              onerror="this.onerror=null;this.src='icon.png';"
+            />
+            <span>Retryn</span>
+          </div>
+
+          <span class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Support
+          </span>
+
+          <h1>
+            Need help with <span class="gradient-text">Retryn</span>?
+          </h1>
+
+          <p class="hero-lead">
+            Reach our support team for account help, subscription help, billing questions, bug reports, and product feedback.
+          </p>
+
+          <div class="hero-cta-row">
+            <a
+              href="mailto:support@retryn.app?subject=Retryn%20Support"
+              class="btn-primary"
+            >
+              Email Support
+            </a>
+
+            <a
+              href="tel:9194106041"
+              class="btn-secondary"
+            >
+              Call Support
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <strong>Best first step:</strong>
+            Email
+            <a href="mailto:support@retryn.app">support@retryn.app</a>
+            with your device model, iOS version, app version, and a short summary of the issue.
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-3">
+        <article class="card">
+          <div class="icon-badge">✉️</div>
+          <h3>Email Support</h3>
+          <p>
+            Reach us for account access, refund tracking questions, return deadline questions, or general app help.
+          </p>
+          <a
+            href="mailto:support@retryn.app?subject=Retryn%20Support"
+            class="card-link"
+          >
+            support@retryn.app
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="icon-badge">💳</div>
+          <h3>Subscription Help</h3>
+          <p>
+            Apple manages App Store billing and subscription changes. Open iPhone Settings, tap your Apple ID, then choose Subscriptions.
+          </p>
+          <a
+            href="https://apps.apple.com/app/retryn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-link"
+          >
+            View App Store Page
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="icon-badge">🔒</div>
+          <h3>Privacy and Legal</h3>
+          <p>
+            Review our privacy details and legal terms for data handling, service rules, and account details.
+          </p>
+          <a
+            href="/privacy.html"
+            class="card-link"
+          >
+            Privacy Policy
+          </a>
+          <br />
+          <a
+            href="/terms/"
+            class="card-link"
+          >
+            Terms of Use
+          </a>
+        </article>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="section-kicker">Support details</div>
+          <h2 class="section-title">What to send</h2>
+          <p>
+            For faster support, include these details in your message:
+          </p>
+          <ul>
+            <li>App version</li>
+            <li>iPhone model</li>
+            <li>iOS version</li>
+            <li>Short summary of the issue</li>
+            <li>Screenshots that show the issue</li>
+            <li>Subscription or purchase details, if billing is involved</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Direct contact</h2>
+          <p>
+            Our support inbox is the main support channel for Retryn.
+          </p>
+
+          <div class="contact-block">
+            <p class="contact-line">
+              <strong>Email:</strong>
+              <a href="mailto:support@retryn.app">support@retryn.app</a>
+            </p>
+            <p class="contact-line">
+              <strong>Phone:</strong>
+              <a href="tel:9194106041">919-410-6041</a>
+            </p>
+            <p class="contact-line">
+              <strong>Mail:</strong>
+              631 Brawley School Rd, Ste 300 #1139, Mooresville, NC 28117, United States
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <div class="section-kicker">Common questions</div>
+        <h2 class="section-title">FAQ</h2>
+
+        <div class="faq-list">
+          <details>
+            <summary>How do I cancel Retryn Pro?</summary>
+            <div class="faq-body">
+              Open iPhone Settings, tap your Apple ID, choose Subscriptions, then select Retryn. Apple handles subscription changes and billing.
+            </div>
+          </details>
+
+          <details>
+            <summary>How do I report a bug?</summary>
+            <div class="faq-body">
+              Email
+              <a href="mailto:support@retryn.app">support@retryn.app</a>
+              with your device model, iOS version, app version, steps that led to the issue, and screenshots.
+            </div>
+          </details>
+
+          <details>
+            <summary>Who handles refunds for App Store purchases?</summary>
+            <div class="faq-body">
+              Apple handles App Store billing and refund requests. If you need help with account details or app access, reach our support team by email.
+            </div>
+          </details>
+
+          <details>
+            <summary>Where should feature feedback go?</summary>
+            <div class="faq-body">
+              Send feature feedback to
+              <a href="mailto:support@retryn.app?subject=Retryn%20Feature%20Feedback">support@retryn.app</a>.
+              User feedback helps shape future updates.
+            </div>
+          </details>
+
+          <details>
+            <summary>Where do privacy or data requests go?</summary>
+            <div class="faq-body">
+              Send privacy or data requests to
+              <a href="mailto:support@retryn.app?subject=Retryn%20Privacy%20Request">support@retryn.app</a>.
+              You may also review our
+              <a href="/privacy.html">Privacy Policy</a>.
+            </div>
+          </details>
+
+          <details>
+            <summary>Where do legal questions go?</summary>
+            <div class="faq-body">
+              Review our
+              <a href="/terms/">Terms of Use</a>
+              and
+              <a href="/privacy.html">Privacy Policy</a>.
+              For follow-up help, email
+              <a href="mailto:support@retryn.app">support@retryn.app</a>.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <div class="footer-note">
+        Retryn support page.
+        For legal details, visit
+        <a href="/terms/">Terms of Use</a>
+        and
+        <a href="/privacy.html">Privacy Policy</a>.
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+```
